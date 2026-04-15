@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "defaultPassportCountry": "SG",
+  "countries": [
+    {
+      "countryCode": "CN",
+      "name": "China",
+      "flagEmoji": "🇨🇳",
+      "cities": ["Shanghai", "Beijing", "Chengdu", "Shenzhen"],
+      "defaultCity": "Shanghai",
+      "rulesFile": "rules/CN_SG.json",
+      "documentsFile": "documents/CN.json"
+    }
+  ]
+}
