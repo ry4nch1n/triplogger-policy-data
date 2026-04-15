@@ -1,0 +1,110 @@
+[
+  {
+    "countryCode": "CN",
+    "passportCountry": "SG",
+    "ruleType": "SINGLE_ENTRY_LIMIT",
+    "displayName": "Visa-Free Stay Limit",
+    "description": "Singapore passport holders can stay in China visa-free for up to 30 days per entry. Covers tourism, business, and family visits. Effective Feb 9, 2024 through Dec 31, 2026.",
+    "thresholdDays": 30,
+    "cautionThresholdPercent": 70,
+    "warningThresholdPercent": 85,
+    "criticalThresholdPercent": 95,
+    "applicableVisaTypes": ["VISA_FREE"],
+    "validFrom": "2024-02-09",
+    "validUntil": "2026-12-31",
+    "isActive": true,
+    "priority": 1,
+    "suggestion": "Apply for an M Visa (business) before your trip, or exit China and re-enter for a fresh 30-day period.",
+    "detailedExplanation": "Under the mutual visa-exemption arrangement between Singapore and China (effective 9 Feb 2024), Singapore ordinary passport holders may enter China without a visa for stays up to 30 days.\n\nThe 30-day count starts from the day of entry (day 1). You must exit China by the end of day 30. Overstaying even by one day can result in fines (RMB 500 per day, up to RMB 10,000), detention, or a ban on re-entry.\n\nThis policy covers short-term business visits, tourism, and family visits. It does NOT cover employment or journalism activities.\n\nIf you need to stay longer than 30 days, you must apply for a proper visa (M Visa for business) BEFORE entering China. You cannot convert a visa-free entry to a visa after arrival.",
+    "actionSteps": [
+      {"title": "Apply for M Visa online", "description": "Start your M Visa application at the Chinese Visa Application Service Center (CVASC) online portal. You will need an invitation letter from your Chinese business partner.", "url": "https://www.visaforchina.cn/SGP2_EN/", "location": "online", "isOnline": true},
+      {"title": "CVASC Singapore Office", "description": "Submit your M Visa application in person. Processing takes 4 working days (standard) or 2-3 days (express). Bring passport, completed form, invitation letter, and photo.", "url": "https://www.visaforchina.cn/SGP2_EN/aboutus/277090.shtml", "location": "SG", "address": "80 Robinson Road, #09-01/02, Singapore 068898", "isOnline": false},
+      {"title": "Exit and re-enter China", "description": "If approaching the 30-day limit, exit to a nearby destination (Hong Kong, Macau, Japan, South Korea) and re-enter for a fresh 30-day visa-free period. Note: subject to the 90-day rolling window limit.", "location": "online", "isOnline": true},
+      {"title": "Shanghai Exit-Entry Administration", "description": "For visa extensions while in Shanghai. Extensions are at the discretion of the PSB and are not guaranteed. Apply at least 7 days before expiry.", "url": "https://gaj.sh.gov.cn/crj/", "location": "Shanghai", "address": "1500 Minsheng Road, Pudong New Area, Shanghai", "isOnline": false},
+      {"title": "Beijing Exit-Entry Administration", "description": "For visa extensions while in Beijing. Apply at least 7 days before your visa-free period expires.", "url": "https://gaj.beijing.gov.cn/", "location": "Beijing", "address": "2 Andingmen East Street, Dongcheng District, Beijing", "isOnline": false}
+    ]
+  },
+  {
+    "countryCode": "CN",
+    "passportCountry": "SG",
+    "ruleType": "ROLLING_WINDOW_LIMIT",
+    "displayName": "90-Day Rolling Window",
+    "description": "Cumulative visa-free stays cannot exceed 90 days within any rolling 180-day period.",
+    "thresholdDays": 90,
+    "windowDays": 180,
+    "cautionThresholdPercent": 70,
+    "warningThresholdPercent": 85,
+    "criticalThresholdPercent": 95,
+    "applicableVisaTypes": ["VISA_FREE"],
+    "isActive": true,
+    "priority": 2,
+    "suggestion": "Consider applying for a multi-entry M Visa to avoid the 90-day visa-free rolling limit.",
+    "detailedExplanation": "The rolling window rule counts all your visa-free days in China within any 180-day period. Unlike the calendar year tax rule, this is a sliding window — it looks back 180 days from today.\n\nExample: If you spent 60 visa-free days in China over the past 180 days, you can only stay 30 more visa-free days.\n\nThis rule only applies to visa-free entries. Days under an M Visa or work permit are NOT counted.\n\nFor frequent business travellers, a multi-entry M Visa is strongly recommended.",
+    "actionSteps": [
+      {"title": "Apply for multi-entry M Visa", "description": "A multi-entry M Visa (6 or 12-month) allows stays of 60 or 90 days per entry and is not subject to the 90/180 rolling window.", "url": "https://www.visaforchina.cn/SGP2_EN/", "location": "online", "isOnline": true},
+      {"title": "CVASC Singapore — M Visa", "description": "Apply in person. Requires invitation letter, company registration, and recent business correspondence.", "url": "https://www.visaforchina.cn/SGP2_EN/aboutus/277090.shtml", "location": "SG", "address": "80 Robinson Road, #09-01/02, Singapore 068898", "isOnline": false}
+    ]
+  },
+  {
+    "countryCode": "CN",
+    "passportCountry": "SG",
+    "ruleType": "CALENDAR_YEAR_THRESHOLD",
+    "displayName": "Tax Residency (183-Day Rule)",
+    "description": "Spending 183 or more full days in China within a calendar year (Jan-Dec) makes you a tax resident. Only full 24-hour days count.",
+    "thresholdDays": 183,
+    "cautionThresholdPercent": 70,
+    "warningThresholdPercent": 85,
+    "criticalThresholdPercent": 95,
+    "isActive": true,
+    "priority": 3,
+    "suggestion": "Plan trips to keep total full days below 183 in the calendar year.",
+    "detailedExplanation": "Under China's IIT Law, a non-domiciled individual residing 183+ days in a tax year (Jan 1 - Dec 31) is a resident taxpayer.\n\nDay counting: Only FULL 24-hour days count. Arrival day and departure day are excluded.\nExample: Arriving April 19, departing May 15 = 25 calendar days, but only 24 full days.\n\nTax implications for Singapore citizens:\n- Pay China IIT on all China-source income\n- Singapore-China DTA may provide relief on certain income\n- Still file taxes in Singapore — claim foreign tax credits via IRAS\n\nStrategy: If approaching 183 days, delay your next trip to the following year or shorten a planned trip.",
+    "actionSteps": [
+      {"title": "Singapore-China DTA guide", "description": "Review the Double Taxation Agreement to understand which income is taxable where.", "url": "https://www.iras.gov.sg/taxes/international-tax/list-of-dtas-limited-treaties-and-eoi-arrangements", "location": "online", "isOnline": true},
+      {"title": "IRAS foreign tax credit", "description": "If you pay tax in China, claim a foreign tax credit in Singapore to avoid double taxation.", "url": "https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/tax-reliefs-rebates-and-deductions/foreign-tax-credit", "location": "online", "isOnline": true},
+      {"title": "Consult a cross-border tax advisor", "description": "For complex situations (dual income, stock options, etc.), consult a professional experienced in SG-China tax matters.", "location": "SG", "isOnline": false}
+    ]
+  },
+  {
+    "countryCode": "CN",
+    "passportCountry": "SG",
+    "ruleType": "CONSECUTIVE_YEAR_RULE",
+    "displayName": "6-Year Worldwide Income Rule",
+    "description": "After 6 consecutive years as tax resident (183+ days/year), worldwide income becomes taxable in year 7. Reset by: staying <183 days in any year, OR leaving China 31+ consecutive days.",
+    "thresholdDays": 183,
+    "consecutiveYears": 6,
+    "resetConditionDays": 31,
+    "cautionThresholdPercent": 50,
+    "warningThresholdPercent": 70,
+    "criticalThresholdPercent": 85,
+    "isActive": true,
+    "priority": 4,
+    "suggestion": "Take at least one trip of 31+ consecutive days outside China each year to reset the counter.",
+    "detailedExplanation": "The 6-year rule determines when worldwide income becomes taxable in China.\n\nYears 1-6: Tax resident status means you pay IIT on China-source income only.\nYear 7+: If 6 consecutive years pass without a reset, ALL worldwide income becomes taxable.\n\nHow to reset:\n1. Stay fewer than 183 days in any calendar year, OR\n2. Leave China for 31+ continuous days in any tax-resident year.\n\nStrategy: Plan one extended trip home (31+ days) every year. This resets the counter permanently. The 31 days must be CONTINUOUS — multiple shorter trips do not count.",
+    "actionSteps": [
+      {"title": "Plan annual 31+ day trip outside China", "description": "Schedule a continuous 31+ day period outside China each year. This can be home leave, vacation, or overseas business travel.", "location": "online", "isOnline": true},
+      {"title": "Consult a China IIT specialist", "description": "The 6-year rule has nuances depending on your income structure. A specialist can help plan optimally.", "location": "SG", "isOnline": false}
+    ]
+  },
+  {
+    "countryCode": "CN",
+    "passportCountry": "SG",
+    "ruleType": "VISA_REQUIREMENT",
+    "displayName": "M Visa Required",
+    "description": "Stays exceeding 30 days require a formal visa (typically M Visa for business). Must be obtained before entry.",
+    "thresholdDays": 30,
+    "cautionThresholdPercent": 70,
+    "warningThresholdPercent": 85,
+    "criticalThresholdPercent": 95,
+    "applicableVisaTypes": ["VISA_FREE"],
+    "isActive": true,
+    "priority": 5,
+    "suggestion": "Apply for an M Visa at CVASC Singapore before your trip.",
+    "detailedExplanation": "If your trip exceeds 30 days, you MUST obtain an M Visa before entering China. You cannot enter visa-free and convert to a visa afterwards.\n\nM Visa types:\n- Single-entry: One entry, 30/60/90 days\n- Double-entry: Two entries within validity\n- Multi-entry 6-month: Multiple entries, up to 60 days each\n- Multi-entry 12-month: Multiple entries, up to 90 days each\n\nRequired documents:\n1. Valid passport (6+ months validity, 2+ blank pages)\n2. Completed application form\n3. Passport photo (48x33mm, white background)\n4. Invitation letter from Chinese company\n5. Business registration of inviting company\n6. Your company's introduction letter\n\nProcessing: 4 working days (standard), 2-3 days (express), 1 day (rush).",
+    "actionSteps": [
+      {"title": "Download visa application form", "description": "Complete the form online before visiting the CVASC office.", "url": "https://www.visaforchina.cn/SGP2_EN/generalinformation/visaknowledge/284342.shtml", "location": "online", "isOnline": true},
+      {"title": "CVASC Singapore Office", "description": "Submit application in person. Mon-Fri 9:00-15:00. Standard processing: 4 days, SGD 40.", "url": "https://www.visaforchina.cn/SGP2_EN/aboutus/277090.shtml", "location": "SG", "address": "80 Robinson Road, #09-01/02, Singapore 068898", "isOnline": false},
+      {"title": "Check visa status", "description": "Track your application status online using your application number.", "url": "https://www.visaforchina.cn/SGP2_EN/progress/277088.shtml", "location": "online", "isOnline": true}
+    ]
+  }
+]

@@ -1,0 +1,30 @@
+[
+  {
+    "countryCode": "CN",
+    "name": "China Arrival Card",
+    "description": "Entry card required for all foreign nationals arriving in China. Can be filled online before departure to save time at immigration.",
+    "url": "https://s.nia.gov.cn/ArrivalCardFillingPC/entry-registation-home",
+    "urlMobile": "https://s.nia.gov.cn/ArrivalCardFillingPhone/",
+    "reminderDaysBefore": 3,
+    "isRequired": true,
+    "category": "arrival"
+  },
+  {
+    "countryCode": "CN",
+    "name": "China Customs Declaration",
+    "description": "Required if carrying goods exceeding duty-free limits, cash exceeding USD 5,000 equivalent, or items subject to import restrictions.",
+    "url": "http://www.customs.gov.cn/customs/302249/302266/index.html",
+    "reminderDaysBefore": 1,
+    "isRequired": false,
+    "category": "customs"
+  },
+  {
+    "countryCode": "CN",
+    "name": "Temporary Residence Registration",
+    "description": "Within 24 hours of arrival, you must register your temporary address with the local police station. Hotels do this automatically, but private accommodation requires manual registration.",
+    "url": "https://www.nia.gov.cn",
+    "reminderDaysBefore": 0,
+    "isRequired": true,
+    "category": "arrival"
+  }
+]
