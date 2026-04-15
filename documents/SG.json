@@ -1,0 +1,12 @@
+[
+  {
+    "countryCode": "SG",
+    "name": "Singapore Arrival Card (SGAC)",
+    "description": "All travellers entering Singapore must submit an electronic SG Arrival Card up to 3 days before arrival. Free of charge.",
+    "url": "https://eservices.ica.gov.sg/sgarrivalcard/",
+    "urlMobile": "https://eservices.ica.gov.sg/sgarrivalcard/",
+    "reminderDaysBefore": 3,
+    "isRequired": true,
+    "category": "arrival"
+  }
+]
