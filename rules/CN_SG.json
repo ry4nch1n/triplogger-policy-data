@@ -21,9 +21,7 @@
       {"title": "CVASC Singapore Office", "description": "Submit your M Visa application in person. Processing takes 4 working days (standard) or 2-3 days (express). Bring passport, completed form, invitation letter, and photo.", "url": "https://www.visaforchina.cn/SGP2_EN/aboutus/277090.shtml", "location": "SG", "address": "80 Robinson Road, #09-01/02, Singapore 068898", "isOnline": false},
       {"title": "Exit and re-enter China", "description": "If approaching the 30-day limit, exit to a nearby destination (Hong Kong, Macau, Japan, South Korea) and re-enter for a fresh 30-day visa-free period. Note: subject to the 90-day rolling window limit.", "location": "online", "isOnline": true},
       {"title": "Shanghai Exit-Entry Administration", "description": "For visa extensions while in Shanghai. Extensions are at the discretion of the PSB and are not guaranteed. Apply at least 7 days before expiry.", "url": "https://gaj.sh.gov.cn/crj/", "location": "Shanghai", "address": "1500 Minsheng Road, Pudong New Area, Shanghai", "isOnline": false},
-      {"title": "Beijing Exit-Entry Administration", "description": "Main PSB office for visa extensions in Beijing. Open Mon-Sat 8:30-16:30. Apply at least 7 days before your visa-free period expires. Also handles temporary residence registration issues.", "url": "https://gaj.beijing.gov.cn/", "location": "Beijing", "address": "No. 2 Andingmen Dongdajie, Dongcheng District, Beijing", "isOnline": false},
-      {"title": "Chengdu Exit-Entry Administration", "description": "Main PSB office for visa extensions in Chengdu. Open Mon-Fri 9:00-17:00. Located near Tianfu Square. Apply at least 7 days before expiry.", "location": "Chengdu", "address": "No. 2 Renmin West Road, Qingyang District, Chengdu (west side of Sichuan Science and Technology Museum)", "isOnline": false},
-      {"title": "Shenzhen Exit-Entry Administration", "description": "Main PSB office for visa extensions in Shenzhen. Open Mon-Fri 9:00-18:00. Near Shenzhen Book Mall. If travelling to Hong Kong for a border run, Shenzhen ports are convenient exit points.", "location": "Shenzhen", "address": "4016 Jiefang Road, Luohu District, Shenzhen", "isOnline": false}
+      {"title": "Beijing Exit-Entry Administration", "description": "For visa extensions while in Beijing. Apply at least 7 days before your visa-free period expires.", "url": "https://gaj.beijing.gov.cn/", "location": "Beijing", "address": "2 Andingmen East Street, Dongcheng District, Beijing", "isOnline": false}
     ]
   },
   {
@@ -64,11 +62,7 @@
     "actionSteps": [
       {"title": "Singapore-China DTA guide", "description": "Review the Double Taxation Agreement to understand which income is taxable where.", "url": "https://www.iras.gov.sg/taxes/international-tax/list-of-dtas-limited-treaties-and-eoi-arrangements", "location": "online", "isOnline": true},
       {"title": "IRAS foreign tax credit", "description": "If you pay tax in China, claim a foreign tax credit in Singapore to avoid double taxation.", "url": "https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/tax-reliefs-rebates-and-deductions/foreign-tax-credit", "location": "online", "isOnline": true},
-      {"title": "Consult a cross-border tax advisor", "description": "For complex situations (dual income, stock options, etc.), consult a professional experienced in SG-China tax matters.", "location": "SG", "isOnline": false},
-      {"title": "Shanghai Tax Service Hall", "description": "For IIT registration and filing while in Shanghai. First-time foreign taxpayer registration requires in-person visit with passport (facial recognition unavailable for foreigners).", "location": "Shanghai", "address": "Shanghai Municipal Tax Service, Pudong New Area", "isOnline": false},
-      {"title": "Beijing Tax Service (Chaoyang)", "description": "Primary expat-area tax office in Beijing. Handles IIT registration for foreigners. Bring passport for first-time registration.", "url": "https://beijing.chinatax.gov.cn/", "location": "Beijing", "address": "No. 1, Zone 3, Anyuan Dongli, Chaoyang District, Beijing", "isOnline": false},
-      {"title": "Shenzhen Tax Service", "description": "Shenzhen offers multilingual tax consultation (English, French, Russian, Japanese) via the 12366 hotline. In-person IIT registration at the main office.", "url": "https://www.sz.gov.cn/en_szgov/services/enterprise/taxation/", "location": "Shenzhen", "address": "28 Futian Road, Futian District, Shenzhen", "isOnline": false},
-      {"title": "Chengdu Tax Service", "description": "For IIT matters while in Chengdu. Contact Sichuan Province Tax Bureau for current office locations and hours.", "location": "Chengdu", "isOnline": false}
+      {"title": "Consult a cross-border tax advisor", "description": "For complex situations (dual income, stock options, etc.), consult a professional experienced in SG-China tax matters.", "location": "SG", "isOnline": false}
     ]
   },
   {
@@ -111,6 +105,66 @@
       {"title": "Download visa application form", "description": "Complete the form online before visiting the CVASC office.", "url": "https://www.visaforchina.cn/SGP2_EN/generalinformation/visaknowledge/284342.shtml", "location": "online", "isOnline": true},
       {"title": "CVASC Singapore Office", "description": "Submit application in person. Mon-Fri 9:00-15:00. Standard processing: 4 days, SGD 40.", "url": "https://www.visaforchina.cn/SGP2_EN/aboutus/277090.shtml", "location": "SG", "address": "80 Robinson Road, #09-01/02, Singapore 068898", "isOnline": false},
       {"title": "Check visa status", "description": "Track your application status online using your application number.", "url": "https://www.visaforchina.cn/SGP2_EN/progress/277088.shtml", "location": "online", "isOnline": true}
+    ]
+  },
+  {
+    "countryCode": "CN",
+    "passportCountry": "SG",
+    "ruleType": "SINGLE_ENTRY_LIMIT",
+    "displayName": "M Visa Stay Limit",
+    "description": "M Visa grants a per-entry stay of typically 30, 60, or 90 days depending on the visa sub-type. Default shown is 60 days — verify against your visa's 'Duration of Each Stay' stamp.",
+    "thresholdDays": 60,
+    "cautionThresholdPercent": 70,
+    "warningThresholdPercent": 85,
+    "criticalThresholdPercent": 95,
+    "applicableVisaTypes": ["M_VISA", "BUSINESS_VISA"],
+    "isActive": true,
+    "priority": 6,
+    "suggestion": "Check your M Visa's 'Duration of Each Stay' stamp. If approaching it, exit China or apply for an extension at the local PSB Exit-Entry Administration at least 7 days before expiry.",
+    "detailedExplanation": "China M Visas are marked with a 'Duration of Each Stay' value — usually 30, 60, or 90 days. This is the maximum continuous stay allowed per entry.\n\nVariants:\n- Single-entry (01): one entry, typically 30 days\n- Double-entry (02): two entries, typically 30-60 days each\n- Multi-entry (M): many entries within validity, typically 60-90 days each\n\nThe default threshold here is 60 days as a conservative mid-point. If your actual visa grants 30 or 90 days, the card may flag early or late — check your visa to confirm.\n\nOverstaying an M Visa carries the same penalties as overstaying visa-free entry (RMB 500/day fine up to RMB 10,000, detention, and potential re-entry ban).\n\nExtensions may be granted at PSB Exit-Entry offices at the discretion of local authorities. Apply at least 7 days before expiry.",
+    "actionSteps": [
+      {"title": "Shanghai Exit-Entry Administration", "description": "Apply for M Visa extension in Shanghai. Extensions at PSB discretion. Apply at least 7 days before expiry.", "url": "https://gaj.sh.gov.cn/crj/", "location": "Shanghai", "address": "1500 Minsheng Road, Pudong New Area, Shanghai", "isOnline": false},
+      {"title": "Beijing Exit-Entry Administration", "description": "Apply for M Visa extension in Beijing. Apply at least 7 days before expiry.", "url": "https://gaj.beijing.gov.cn/", "location": "Beijing", "address": "2 Andingmen East Street, Dongcheng District, Beijing", "isOnline": false},
+      {"title": "Exit and re-enter on multi-entry M Visa", "description": "If you have a multi-entry M Visa, exiting and re-entering resets the per-entry stay clock. Subject to the visa's total validity and any per-year maximums.", "location": "online", "isOnline": true}
+    ]
+  },
+  {
+    "countryCode": "CN",
+    "passportCountry": "SG",
+    "ruleType": "SINGLE_ENTRY_LIMIT",
+    "displayName": "APEC ABTC Stay Limit",
+    "description": "APEC Business Travel Card holders pre-cleared for China may stay up to 60 days per entry in lieu of a visa. Card itself is valid 5 years.",
+    "thresholdDays": 60,
+    "cautionThresholdPercent": 70,
+    "warningThresholdPercent": 85,
+    "criticalThresholdPercent": 95,
+    "applicableVisaTypes": ["APEC_ABTC"],
+    "isActive": true,
+    "priority": 7,
+    "suggestion": "If you need more than 60 days, apply for an M Visa separately or exit and re-enter (subject to reasonable use).",
+    "detailedExplanation": "The APEC Business Travel Card (ABTC) is a 5-year card issued by Singapore ICA to eligible frequent business travellers. Pre-cleared economies — including China — accept the card in place of a visa for short-term business visits.\n\nFor China specifically, ABTC holders can stay up to 60 days per entry. The card does NOT exempt you from the 183-day tax residency threshold, and days under an ABTC still count toward Chinese tax residency (physical-presence-based).\n\nWhat the card shows on the back determines which economies have pre-cleared you — confirm 'CHN' appears before relying on it for China entry.\n\nCard benefits:\n- No visa application required per trip\n- Fast-track immigration at major APEC airports\n- Single document for multiple APEC economies\n\nLimits:\n- 60-day per-entry stay in China\n- Business purpose only (not tourism or employment)\n- Card holder must be a pre-cleared traveller",
+    "actionSteps": [
+      {"title": "Apply or renew ABTC (Singapore ICA)", "description": "Singapore ICA issues ABTCs. Eligibility: frequent business travel to APEC economies, Singapore citizen, no criminal record.", "url": "https://www.ica.gov.sg/enter-transit-depart/apec-business-travel-card", "location": "SG", "isOnline": true},
+      {"title": "APEC Business Mobility Group — ABTC info", "description": "Official APEC guidance on ABTC use, pre-clearance economies, and validity rules.", "url": "https://www.apec.org/groups/committee-on-trade-and-investment/business-mobility-group", "location": "online", "isOnline": true}
+    ]
+  },
+  {
+    "countryCode": "CN",
+    "passportCountry": "SG",
+    "ruleType": "SINGLE_ENTRY_LIMIT",
+    "displayName": "Tourist Visa (L) Stay Limit",
+    "description": "L Visa (tourism) typically grants 30 days per entry. Rarely needed for SG passport holders since visa-free already covers 30 days of tourism.",
+    "thresholdDays": 30,
+    "cautionThresholdPercent": 70,
+    "warningThresholdPercent": 85,
+    "criticalThresholdPercent": 95,
+    "applicableVisaTypes": ["TOURIST_VISA"],
+    "isActive": true,
+    "priority": 8,
+    "suggestion": "For stays beyond 30 days, apply for an L Visa with longer per-entry duration, or exit and re-enter.",
+    "detailedExplanation": "China L Visa (Tourist) is for non-business tourism. For Singapore passport holders, the L Visa is rarely needed — the SG-CN visa-free arrangement already covers up to 30 days of tourism.\n\nL Visa sub-types:\n- Single-entry: typically 30 days per entry\n- Double-entry: two entries, 30 days each\n- Multi-entry 6-month: multiple entries, 30 days each\n\nUse cases:\n- Tourism stays longer than 30 days (combine with extension)\n- Tourism after the visa-free arrangement expires (currently in force until 31 Dec 2026)\n\nThe default threshold shown is 30 days — verify against your L Visa's stamp.",
+    "actionSteps": [
+      {"title": "Apply for L Visa at CVASC", "description": "Start the L Visa application at the Chinese Visa Application Service Center Singapore.", "url": "https://www.visaforchina.cn/SGP2_EN/", "location": "SG", "address": "80 Robinson Road, #09-01/02, Singapore 068898", "isOnline": false}
     ]
   }
 ]
