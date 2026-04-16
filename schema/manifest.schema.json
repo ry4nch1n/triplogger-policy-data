@@ -1,0 +1,50 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/ry4nch1n/triplogger-policy-data/schema/manifest.schema.json",
+  "title": "TripLogger Manifest",
+  "description": "Root manifest describing supported countries. Fetched by the app on each policy refresh.",
+  "type": "object",
+  "required": ["version", "defaultPassportCountry", "countries"],
+  "additionalProperties": false,
+  "properties": {
+    "version": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Schema version of this manifest."
+    },
+    "defaultPassportCountry": {
+      "type": "string",
+      "pattern": "^[A-Z]{2}$",
+      "description": "ISO 3166-1 alpha-2 of the default passport country (currently only SG supported)."
+    },
+    "countries": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/CountryConfig" }
+    }
+  },
+  "definitions": {
+    "CountryConfig": {
+      "type": "object",
+      "required": ["countryCode", "name", "rulesFile", "documentsFile"],
+      "additionalProperties": false,
+      "properties": {
+        "countryCode": { "type": "string", "pattern": "^[A-Z]{2}$" },
+        "name": { "type": "string", "minLength": 1 },
+        "flagEmoji": { "type": "string" },
+        "cities": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "defaultCity": { "type": "string" },
+        "rulesFile": {
+          "type": "string",
+          "pattern": "^rules/[A-Z]{2}_[A-Z]{2}\\.json$"
+        },
+        "documentsFile": {
+          "type": "string",
+          "pattern": "^documents/[A-Z]{2}\\.json$"
+        }
+      }
+    }
+  }
+}
