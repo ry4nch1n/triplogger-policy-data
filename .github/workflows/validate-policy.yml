@@ -1,0 +1,67 @@
+name: Validate policy data
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install check-jsonschema
+        run: pip install --quiet "check-jsonschema>=0.29,<1"
+
+      - name: Validate manifest.json
+        run: |
+          check-jsonschema --schemafile schema/manifest.schema.json manifest.json
+
+      - name: Validate rules/*.json
+        run: |
+          shopt -s nullglob
+          files=(rules/*.json)
+          if [ ${#files[@]} -eq 0 ]; then
+            echo "No rules files to validate."
+          else
+            check-jsonschema --schemafile schema/rule.schema.json "${files[@]}"
+          fi
+
+      - name: Validate documents/*.json
+        run: |
+          shopt -s nullglob
+          files=(documents/*.json)
+          if [ ${#files[@]} -eq 0 ]; then
+            echo "No documents files to validate."
+          else
+            check-jsonschema --schemafile schema/document.schema.json "${files[@]}"
+          fi
+
+      - name: Manifest-rules consistency check
+        run: |
+          python3 <<'EOF'
+          import json, sys
+          from pathlib import Path
+          manifest = json.loads(Path("manifest.json").read_text())
+          errors = []
+          for c in manifest["countries"]:
+              for key in ("rulesFile", "documentsFile"):
+                  p = Path(c[key])
+                  if not p.exists():
+                      errors.append(f"{c['countryCode']}: {key} points to {p} which does not exist")
+          if errors:
+              print("\n".join(errors))
+              sys.exit(1)
+          print(f"OK: manifest references {len(manifest['countries'])} countries, all files present.")
+          EOF
