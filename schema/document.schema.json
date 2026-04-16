@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/ry4nch1n/triplogger-policy-data/schema/document.schema.json",
+  "title": "TripLogger Documents File",
+  "description": "Array of required travel documents for one country (e.g. CN.json = China).",
+  "type": "array",
+  "items": { "$ref": "#/definitions/Document" },
+  "definitions": {
+    "Document": {
+      "type": "object",
+      "required": ["countryCode", "name", "description", "url"],
+      "additionalProperties": false,
+      "properties": {
+        "countryCode": { "type": "string", "pattern": "^[A-Z]{2}$" },
+        "name": { "type": "string", "minLength": 1, "maxLength": 80 },
+        "description": { "type": "string", "minLength": 10 },
+        "url": { "type": "string", "format": "uri" },
+        "urlMobile": { "type": "string", "format": "uri" },
+        "reminderDaysBefore": { "type": "integer", "minimum": 0, "maximum": 365 },
+        "isRequired": { "type": "boolean" },
+        "applicableVisaTypes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "VISA_FREE",
+              "M_VISA",
+              "APEC_ABTC",
+              "TOURIST_VISA",
+              "WORK_PERMIT",
+              "BUSINESS_VISA",
+              "OTHER"
+            ]
+          },
+          "uniqueItems": true
+        },
+        "category": {
+          "type": "string",
+          "enum": ["arrival", "customs", "health", "visa"]
+        }
+      }
+    }
+  }
+}
