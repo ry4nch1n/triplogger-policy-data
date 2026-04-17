@@ -6,7 +6,13 @@
       "countryCode": "CN",
       "name": "China",
       "flagEmoji": "🇨🇳",
-      "cities": ["Shanghai", "Beijing", "Chengdu", "Shenzhen"],
+      "cities": [
+        "Shanghai",
+        "Beijing",
+        "Chengdu",
+        "Shenzhen",
+        "Guangzhou"
+      ],
       "defaultCity": "Shanghai",
       "rulesFile": "rules/CN_SG.json",
       "documentsFile": "documents/CN.json"
