@@ -18,7 +18,6 @@ on:
 permissions:
   contents: write
   issues: write
-  pull-requests: write
 
 concurrency:
   # Serialise runs so two crons can't try to write the same branch.
@@ -66,18 +65,16 @@ jobs:
           fi
           if [ "$EVENT_NAME" = "issues" ]; then
             LABELS=$(gh issue view "$EVENT_ISSUE_NUMBER" --json labels -q '.labels[].name')
-            if echo "$LABELS" | grep -qE '^missing-(country|city)$' && ! echo "$LABELS" | grep -q '^awaiting-review$'; then
+            if echo "$LABELS" | grep -qE '^missing-(country|city)$'; then
               echo "numbers=$EVENT_ISSUE_NUMBER" >> "$GITHUB_OUTPUT"
             else
               echo "numbers=" >> "$GITHUB_OUTPUT"
             fi
             exit 0
           fi
-          # Collect unhandled missing-country and missing-city issues
-          COUNTRY=$(gh issue list --state open --label missing-country --json number,labels \
-            --jq "[.[] | select(.labels | map(.name) | index(\"awaiting-review\") | not) | .number] | .[]" || true)
-          CITY=$(gh issue list --state open --label missing-city --json number,labels \
-            --jq "[.[] | select(.labels | map(.name) | index(\"awaiting-review\") | not) | .number] | .[]" || true)
+          # Collect all open missing-country and missing-city issues
+          COUNTRY=$(gh issue list --state open --label missing-country --json number --jq '.[].number' || true)
+          CITY=$(gh issue list --state open --label missing-city --json number --jq '.[].number' || true)
           NUMS=$(printf '%s\n%s\n' "$COUNTRY" "$CITY" | grep -v '^$' | sort -un | head -n "${MAX_ISSUES_PER_RUN}" | paste -sd, -)
           echo "numbers=${NUMS:-}" >> "$GITHUB_OUTPUT"
 
