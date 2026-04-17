@@ -29,7 +29,9 @@
       "countryCode": "JP",
       "name": "Japan",
       "flagEmoji": "",
-      "cities": [],
+      "cities": [
+        "Tokyo"
+      ],
       "defaultCity": "",
       "rulesFile": "rules/JP_SG.json",
       "documentsFile": "documents/JP.json",

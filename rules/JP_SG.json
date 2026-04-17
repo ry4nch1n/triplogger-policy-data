@@ -30,6 +30,22 @@
         "description": "Verify current visa requirements and permitted activities for Singapore passport holders on the official Embassy of Japan in Singapore website before each trip.",
         "url": "https://www.sg.emb-japan.go.jp/itpr_en/visa_requirement.html",
         "isOnline": true
+      },
+      {
+        "title": "Tokyo Regional Immigration Services Bureau",
+        "description": "The primary immigration authority for Tokyo. If you encounter an unavoidable emergency (hospitalisation, natural disaster, flight cancellation) that prevents departure before your 90-day Temporary Visitor period expires, you must apply for an Extension of Period of Stay in person at this office before your stamp's 'Until' date. Note: extensions are not granted for tourism convenience and are solely at the discretion of the Immigration Services Agency. Office is closed on weekends and national holidays.",
+        "url": "https://www.moj.go.jp/isa/about/region/tokyo/index.html",
+        "location": "Tokyo",
+        "address": "5-5-30 Konan, Minato-ku, Tokyo 108-8255",
+        "isOnline": false
+      },
+      {
+        "title": "Foreign Residents Support Center (FRESC) – Residence Consultation",
+        "description": "Walk-in and appointment-based consultation service operated by the Tokyo Regional Immigration Services Bureau. Provides guidance on residence status, period-of-stay questions, and immigration procedures in English. Useful if you need to clarify your stay limits or options before your 90-day period ends. Open Monday–Friday 09:00–17:00 (excluding holidays).",
+        "url": "https://www.moj.go.jp/isa/support/fresc/fresc01.html",
+        "location": "Tokyo",
+        "address": "Yotsuya Tower 13F, 1-6-1 Yotsuya, Shinjuku-ku, Tokyo 160-0004",
+        "isOnline": false
       }
     ]
   },
@@ -60,6 +76,29 @@
         "description": "Consult the Ministry of Foreign Affairs of Japan's official visa exemption list to confirm the current terms of the Singapore–Japan exemption arrangement.",
         "url": "https://www.mofa.go.jp/j_info/visit/visa/short/novisa.html",
         "isOnline": true
+      },
+      {
+        "title": "Tokyo Regional Immigration Services Bureau – Status of Residence Application",
+        "description": "If you plan to remain in Japan beyond the 90-day visa-free limit, you must obtain the appropriate status of residence (e.g., work, student, dependent). In Tokyo, all applications for change of status, extension of period of stay, and Certificate of Eligibility are handled at this bureau. Submit your application before your current period of stay expires. The bureau has jurisdiction over Tokyo, Kanagawa, Saitama, Chiba, Ibaraki, Tochigi, Gunma, Yamanashi, and Nagano. Open Monday–Friday 09:00–16:00.",
+        "url": "https://www.moj.go.jp/isa/about/region/tokyo/index.html",
+        "location": "Tokyo",
+        "address": "5-5-30 Konan, Minato-ku, Tokyo 108-8255",
+        "isOnline": false
+      },
+      {
+        "title": "ISA Online Residence Application System",
+        "description": "The Immigration Services Agency's official online portal (updated January 2026) allows eligible foreign nationals to submit extensions of period of stay and changes of status of residence without visiting an office in person. Eligible statuses and procedure types are listed on the portal. Note: not all residence procedures are eligible for online submission; confirm your eligibility before using this system.",
+        "url": "https://www.moj.go.jp/isa/applications/online/onlineshinsei.html",
+        "location": "Tokyo",
+        "isOnline": true
+      },
+      {
+        "title": "MOFA Foreign Residents Support Center (FRESC) – Visa Enquiries",
+        "description": "The Ministry of Foreign Affairs operates a visa enquiry service at FRESC in Shinjuku. Provides English-language guidance on visa categories, required documents for long-term status applications, and referrals. Open Monday–Friday 09:00–17:00 (excluding holidays). Phone: 0570-011000 (overseas: +81-3-5369-6577).",
+        "url": "https://www.mofa.go.jp/fp/hr_ha/page22e_000254.html",
+        "location": "Tokyo",
+        "address": "Yotsuya Tower 13F, 1-6-1 Yotsuya, Shinjuku-ku, Tokyo 160-0004",
+        "isOnline": false
       }
     ]
   },
@@ -101,6 +140,28 @@
         "description": "The Japan–Singapore DTA may provide relief from double taxation on employment income. Under the treaty's 183-day employment income provision (rolling 12-month basis for SG), income may be exempt from Japanese tax if the conditions are met. Consult the NTA or a qualified zeirishi for treaty application.",
         "url": "https://www.mof.go.jp/tax_policy/summary/international/tax_convention/st_2009_062.htm",
         "isOnline": true
+      },
+      {
+        "title": "Tokyo Regional Taxation Bureau – Foreign Resident Tax Consultation",
+        "description": "The Tokyo Regional Taxation Bureau provides an English-language consultation service for foreign residents on national tax obligations, including income tax filing requirements that arise once you become a Japanese tax resident (generally after 1 year of continuous residence). Call 03-3821-9070, Monday–Friday 09:00–17:00 (excluding holidays). Consultations are also available in Chinese and Korean.",
+        "url": "https://www.nta.go.jp/english/contact/moreinformation/",
+        "location": "Tokyo",
+        "address": "Otemachi Godo Chosha No. 3, 1-3-3 Otemachi, Chiyoda-ku, Tokyo",
+        "isOnline": false
+      },
+      {
+        "title": "National Tax Agency (NTA) – e-Tax Online Filing",
+        "description": "Foreign residents who become liable for Japanese income tax can file their annual tax return (due February 16–March 15 for the prior calendar year) through the NTA's official e-Tax online system. The NTA website provides English-language guidance on individual income tax, international taxation rules, and filing procedures relevant to foreign nationals crossing the 1-year residency threshold.",
+        "url": "https://www.nta.go.jp/english/",
+        "location": "Tokyo",
+        "isOnline": true
+      },
+      {
+        "title": "Tokyo Metropolitan Government – Tax Information for Foreign Residents",
+        "description": "The Tokyo Metropolitan Government's tax authority (主税局) publishes English-language guidance on metropolitan and local taxes (resident's tax, etc.) applicable once you are registered as a resident in Tokyo. The site covers who is liable, how to file, and payment methods. Consultation available Monday–Friday 09:00–17:00 (excluding holidays).",
+        "url": "https://www.tax.metro.tokyo.lg.jp/english",
+        "location": "Tokyo",
+        "isOnline": true
       }
     ]
   },
@@ -128,6 +189,21 @@
         "title": "IRAS: Tax Obligations When Working Overseas",
         "description": "Review IRAS guidance on your continuing Singapore tax obligations and potential foreign tax credit claims if you become a Japanese Permanent Resident taxpayer subject to worldwide income tax in Japan.",
         "url": "https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/tax-residency-and-tax-rates/working-out-my-tax-residency",
+        "isOnline": true
+      },
+      {
+        "title": "Tokyo Regional Taxation Bureau – International Taxation Enquiries",
+        "description": "For foreign nationals who have been resident in Japan for 5 or more years within a 10-year period and may be classified as permanent tax residents (liable for worldwide income), the Tokyo Regional Taxation Bureau is the competent authority. Contact the bureau's foreign resident consultation line (03-3821-9070) or visit in person to clarify your tax domicile status, worldwide income reporting obligations, and any applicable tax treaties between Japan and Singapore. Open Monday–Friday 09:00–17:00.",
+        "url": "https://www.nta.go.jp/english/contact/moreinformation/",
+        "location": "Tokyo",
+        "address": "Otemachi Godo Chosha No. 3, 1-3-3 Otemachi, Chiyoda-ku, Tokyo",
+        "isOnline": false
+      },
+      {
+        "title": "NTA – International Taxation Information (English)",
+        "description": "The National Tax Agency's English portal covers international taxation rules, including the criteria for permanent tax residency, worldwide income obligations, and Japan–Singapore tax treaty provisions that may reduce double taxation. Essential reference for long-term residents approaching or exceeding the 5-years-in-10 threshold.",
+        "url": "https://www.nta.go.jp/english/",
+        "location": "Tokyo",
         "isOnline": true
       }
     ]
