@@ -17,14 +17,5 @@
     "reminderDaysBefore": 1,
     "isRequired": false,
     "category": "customs"
-  },
-  {
-    "countryCode": "CN",
-    "name": "Temporary Residence Registration",
-    "description": "Within 24 hours of arrival, you must register your temporary address with the local police station. Hotels do this automatically, but private accommodation requires manual registration.",
-    "url": "https://www.nia.gov.cn",
-    "reminderDaysBefore": 0,
-    "isRequired": true,
-    "category": "arrival"
   }
 ]
