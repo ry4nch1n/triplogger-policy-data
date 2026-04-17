@@ -75,6 +75,16 @@
             "minLength": 1
           },
           "description": "Visa types relevant for this country. Empty or absent = use universal fallback."
+        },
+        "zoneId": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Shared visa zone ID (e.g. schengen). Countries in the same zone share rolling window limits."
+        },
+        "zoneName": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Human-readable zone name (e.g. Schengen Area)."
         }
       }
     }
