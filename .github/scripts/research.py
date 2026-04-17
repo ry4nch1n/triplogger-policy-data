@@ -108,6 +108,12 @@ INSTRUCTIONS:
 - Set `priority` 1..N in the order rules should appear on the dashboard.
 - Use Singapore context where relevant (e.g. cite IRAS for tax-credit guidance in
   `actionSteps` for CALENDAR_YEAR_THRESHOLD).
+- IMPORTANT: Do NOT add actionSteps that duplicate information already covered
+  in the documents file. Action steps are for location-specific procedural guidance
+  (offices, addresses, visa extension steps). Documents are for universal entry
+  paperwork (arrival cards, customs forms, health declarations). If a topic belongs
+  in documents (e.g. "Arrival Card", "Customs Declaration"), put it there — not in
+  actionSteps. Never put the same topic in both places.
 
 OUTPUT: Return exactly ONE JSON object (no prose, no markdown fences) with three keys:
 
@@ -170,7 +176,7 @@ def write_country_outputs(root: Path, fm: dict, payload: dict) -> None:
 # City research (new)
 # ---------------------------------------------------------------------------
 
-def build_city_prompt(fm: dict, action_step_schema: dict, existing_rules: list[dict]) -> str:
+def build_city_prompt(fm: dict, action_step_schema: dict, existing_rules: list[dict], existing_docs: list[dict]) -> str:
     city = fm["city"]
     country_name = fm["country_name"]
     country_code = fm["country_code"]
@@ -185,10 +191,17 @@ def build_city_prompt(fm: dict, action_step_schema: dict, existing_rules: list[d
         )
     rules_list = "\n".join(rule_summary) if rule_summary else "(no rules on file)"
 
+    # Summarise existing documents so Claude avoids duplicating them as action steps
+    doc_names = [f"- \"{d['name']}\"" for d in existing_docs]
+    docs_list = "\n".join(doc_names) if doc_names else "(none)"
+
     return f"""You are researching city-specific information for a travel-logging app. A user is travelling to **{city}, {country_name} ({country_code})** on a {passport} passport. The app already has country-level rules but needs location-specific action steps for this city.
 
 EXISTING RULES for {country_name}:
 {rules_list}
+
+EXISTING DOCUMENTS (already shown separately in the app — do NOT duplicate as action steps):
+{docs_list}
 
 YOUR TASK: For each rule above where city-specific information is relevant, produce action steps for **{city}**. Focus on:
 
@@ -205,6 +218,9 @@ INSTRUCTIONS:
 - Include the full street address in the `address` field for physical offices.
 - Do NOT invent addresses or URLs — if you cannot verify, omit that step entirely.
 - Do NOT duplicate action steps that already exist. Only add NEW city-specific steps.
+- Do NOT add action steps that cover the same topic as an existing document listed
+  above. Documents handle universal entry paperwork; action steps handle local offices
+  and procedures. Never put the same topic in both.
 
 OUTPUT: Return exactly ONE JSON object (no prose, no markdown fences) with two keys:
 
@@ -428,7 +444,11 @@ def run_city(fm: dict, root: Path, client: Anthropic) -> None:
     # Extract the ActionStep schema from the rule schema definitions
     action_step_schema = rule_schema.get("definitions", {}).get("ActionStep", {})
 
-    prompt = build_city_prompt(fm, action_step_schema, existing_rules)
+    # Load existing documents so the prompt can instruct Claude to avoid duplicating them
+    docs_path = root / "documents" / f"{cc}.json"
+    existing_docs = json.loads(docs_path.read_text()) if docs_path.exists() else []
+
+    prompt = build_city_prompt(fm, action_step_schema, existing_rules, existing_docs)
 
     payload: dict | None = None
     errors: list[str] = []
@@ -440,7 +460,7 @@ def run_city(fm: dict, root: Path, client: Anthropic) -> None:
             break
         if attempt < RETRY_ATTEMPTS:
             prompt = (
-                build_city_prompt(fm, action_step_schema, existing_rules)
+                build_city_prompt(fm, action_step_schema, existing_rules, existing_docs)
                 + "\n\nYour previous response had schema violations:\n"
                 + "\n".join(f"- {e}" for e in errors)
                 + "\n\nFix them and return valid JSON."
