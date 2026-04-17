@@ -1,0 +1,39 @@
+[
+  {
+    "countryCode": "TH",
+    "name": "Thailand Digital Arrival Card (TDAC)",
+    "description": "Mandatory pre-arrival digital form for all non-Thai nationals entering Thailand by air, land, or sea. Replaces the paper TM6 form effective 1 May 2025. Must be submitted online at tdac.immigration.go.th within 3 days (72 hours) before arrival. The system covers personal details, trip information, accommodation, and a health declaration. A QR-code confirmation must be presented to immigration officers on arrival. Free of charge via the official portal.",
+    "url": "https://tdac.immigration.go.th/",
+    "urlMobile": "https://tdac.immigration.go.th/",
+    "reminderDaysBefore": 3,
+    "isRequired": true,
+    "applicableVisaTypes": [
+      "VISA_FREE",
+      "TOURIST_VISA",
+      "BUSINESS_VISA",
+      "WORK_PERMIT",
+      "M_VISA",
+      "APEC_ABTC",
+      "OTHER"
+    ],
+    "category": "arrival"
+  },
+  {
+    "countryCode": "TH",
+    "name": "Thai Customs Declaration",
+    "description": "Passengers carrying goods that exceed duty-free allowances (e.g. cash or negotiable instruments above THB 450,000, goods for commercial use, controlled items) must complete a Customs Declaration at the Thai Customs red channel on arrival. Duty-free personal allowances include up to 200 cigarettes (or 250 g tobacco) and 1 litre of alcohol. Prohibited items such as electronic cigarettes must never be imported. The declaration is handled at the port of entry and is separate from the TDAC.",
+    "url": "https://www.customs.go.th/list_strc_download.php?ini_content=forms&lang=en&left_menu=menu_forms",
+    "reminderDaysBefore": 1,
+    "isRequired": false,
+    "applicableVisaTypes": [
+      "VISA_FREE",
+      "TOURIST_VISA",
+      "BUSINESS_VISA",
+      "WORK_PERMIT",
+      "M_VISA",
+      "APEC_ABTC",
+      "OTHER"
+    ],
+    "category": "customs"
+  }
+]

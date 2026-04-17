@@ -39,6 +39,19 @@
         "VISA_FREE",
         "OTHER"
       ]
+    },
+    {
+      "countryCode": "TH",
+      "name": "Thailand",
+      "flagEmoji": "",
+      "cities": [],
+      "defaultCity": "",
+      "rulesFile": "rules/TH_SG.json",
+      "documentsFile": "documents/TH.json",
+      "visaTypes": [
+        "VISA_FREE",
+        "OTHER"
+      ]
     }
   ]
 }

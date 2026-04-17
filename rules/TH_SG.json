@@ -1,0 +1,112 @@
+[
+  {
+    "countryCode": "TH",
+    "passportCountry": "SG",
+    "ruleType": "SINGLE_ENTRY_LIMIT",
+    "displayName": "Thailand Visa-Free Stay – 60 Days (TVES)",
+    "description": "Singapore passport holders are granted visa-free entry for up to 60 days per visit under Thailand's Tourist Visa Exemption Scheme (TVES). This covers tourism and short-term business. A one-time extension of up to 30 additional days may be applied for at a Thai Immigration office.",
+    "thresholdDays": 60,
+    "applicableVisaTypes": [
+      "VISA_FREE"
+    ],
+    "cautionThresholdPercent": 75,
+    "warningThresholdPercent": 90,
+    "criticalThresholdPercent": 100,
+    "validFrom": "2024-07-15",
+    "isActive": true,
+    "priority": 1,
+    "suggestion": "If you need more time, apply for a 30-day extension at a Thai Immigration office before your permitted stay expires. Overstaying attracts a fine of 500 THB/day (max 20,000 THB) and can result in deportation or a ban.",
+    "detailedExplanation": "Under Thailand's Tourist Visa Exemption Scheme (TVES), Singapore ordinary passport holders may enter Thailand without a pre-arranged visa and stay for a period not exceeding 60 days for tourism or short-term business. This was upgraded from 30 days effective 15 July 2024. A single extension of up to 30 days can be requested at any Thai Immigration office (form TM.7, fee 1,900 THB) before the initial 60 days elapse. There is currently no statutory cap on the number of TVES entries per year, but immigration officers retain discretionary authority to deny entry if a pattern of back-to-back visa-exempt stays suggests an intent to reside.",
+    "actionSteps": [
+      {
+        "title": "Apply for a 30-Day Extension at Thai Immigration",
+        "description": "Visit any Thai Immigration office and submit form TM.7 (with one recent photo) before your 60-day stamp expires. The fee is 1,900 THB and the extension is granted for up to 30 days. You may also apply online via the e-Extension portal for select visa categories.",
+        "url": "https://www.immigration.go.th/en/?page_id=1890",
+        "isOnline": false
+      },
+      {
+        "title": "e-Extension Online Portal (Select Categories)",
+        "description": "Thai Immigration's e-Extension system lets eligible visa holders apply for a stay extension online and collect the sticker in person at Immigration Division 1, Government Complex Chaeng Wattana, Building B, Lak Si District, Bangkok.",
+        "url": "https://thaiextension.vfsevisa.com/index.html",
+        "location": "Immigration Division 1, Government Complex Chaeng Wattana, Building B, Lak Si District, Bangkok",
+        "address": "Government Complex Chaeng Wattana, Building B, Lak Si District, Bangkok 10210",
+        "isOnline": true
+      },
+      {
+        "title": "Royal Thai Embassy in Singapore – Long-Stay Visa Applications",
+        "description": "Singapore citizens wishing to apply for long-term stay visas (e.g. Non-Immigrant, DTV, LTR) beyond the 60+30 day visa-free window should apply at the Royal Thai Embassy in Singapore.",
+        "url": "https://singapore.thaiembassy.org/en/page/contact-us?menu=621c828fa6da916dfd326663",
+        "location": "Royal Thai Embassy, Singapore",
+        "address": "370 Orchard Road, Singapore 238870",
+        "isOnline": false
+      }
+    ]
+  },
+  {
+    "countryCode": "TH",
+    "passportCountry": "SG",
+    "ruleType": "VISA_REQUIREMENT",
+    "displayName": "Visa Required Beyond 60-Day Exemption",
+    "description": "Once the 60-day visa-free allowance (and any approved 30-day extension) is exhausted, a Singapore passport holder must hold an appropriate Thai visa (e.g. Tourist Visa, Non-Immigrant Visa, DTV) for any further stay. Continuing to remain without a valid visa or stamp constitutes overstay.",
+    "thresholdDays": 90,
+    "applicableVisaTypes": [
+      "VISA_FREE"
+    ],
+    "validFrom": "2024-07-15",
+    "isActive": true,
+    "priority": 2,
+    "suggestion": "Plan departures before day 90 (60-day stamp + 30-day extension) or obtain a proper visa from the Royal Thai Embassy in Singapore before travelling.",
+    "detailedExplanation": "The combined maximum stay under the TVES for Singapore passport holders is 60 days + a possible 30-day in-country extension = 90 days. Beyond day 90, the traveller must hold a separately obtained visa. Overstaying is a criminal offence under the Thai Immigration Act: a fine of 500 THB per day of overstay is levied (capped at 20,000 THB), and detention or a re-entry ban may follow. Travellers wishing to remain longer should apply for a Tourist Visa (TR), Non-Immigrant Visa, or the new Destination Thailand Visa (DTV) before or during their stay.",
+    "actionSteps": [
+      {
+        "title": "Apply for a Thai Tourist or Non-Immigrant Visa (Singapore)",
+        "description": "Apply at the Royal Thai Embassy in Singapore for a Tourist Visa (TR) or appropriate Non-Immigrant Visa before your current permission to stay lapses. Bring passport, photo, completed application form, and supporting documents.",
+        "url": "https://singapore.thaiembassy.org/en/page/contact-us?menu=621c828fa6da916dfd326663",
+        "location": "Royal Thai Embassy, Singapore",
+        "address": "370 Orchard Road, Singapore 238870",
+        "isOnline": false
+      }
+    ]
+  },
+  {
+    "countryCode": "TH",
+    "passportCountry": "SG",
+    "ruleType": "CALENDAR_YEAR_THRESHOLD",
+    "displayName": "Thailand Tax Residency – 180-Day Rule",
+    "description": "Any individual (regardless of nationality or visa type) who spends 180 days or more in Thailand in a calendar year (1 Jan – 31 Dec) is deemed a Thai tax resident under Section 41 of the Thai Revenue Code. Tax residents must declare and may owe Thai personal income tax on assessable foreign-sourced income remitted into Thailand during the same tax year.",
+    "thresholdDays": 180,
+    "cautionThresholdPercent": 75,
+    "warningThresholdPercent": 90,
+    "criticalThresholdPercent": 100,
+    "isActive": true,
+    "priority": 3,
+    "suggestion": "Track cumulative days in Thailand carefully each calendar year. If you cross 180 days, register for a Thai Tax Identification Number (TIN), file Form PND 90/91 by 31 March of the following year, and review whether the Thailand–Singapore DTA reduces your Thai liability.",
+    "detailedExplanation": "Under Section 41 of the Thai Revenue Code, tax residency is determined solely by physical presence: 180 or more days (aggregate, any part of a day counts as a full day) in a single calendar year makes you a Thai tax resident for that year. The counter resets on 1 January each year—each year is assessed independently. Thai tax residents must declare foreign-sourced income remitted into Thailand in the same year it is earned (post-2024 rule). Thailand maintains a Double Taxation Agreement (DTA) with Singapore, so income already taxed in Singapore may qualify for a foreign tax credit or reduced Thai rate. Note that a draft worldwide-income law is under review by the Thai Revenue Department that could, if enacted, tax foreign income whether or not it is remitted; monitor the Revenue Department website for updates.",
+    "actionSteps": [
+      {
+        "title": "Thai Revenue Department – Personal Income Tax Filing",
+        "description": "File your annual Thai personal income tax return (Form PND 90 or PND 91) with the Thai Revenue Department by 31 March of the following year. You can file online via the Revenue Department portal.",
+        "url": "https://www.rd.go.th/english/6045.html",
+        "isOnline": true
+      },
+      {
+        "title": "Apply for a Thai Tax Identification Number (TIN)",
+        "description": "If you become a Thai tax resident, register for a TIN at your local Thai Revenue Department district office. Bring passport, visa/entry stamp evidence, and proof of Thai address.",
+        "url": "https://www.rd.go.th/english/37745.html",
+        "isOnline": false
+      },
+      {
+        "title": "IRAS – Singapore Tax Residency & Foreign Income",
+        "description": "If you are also filing taxes in Singapore, check IRAS guidance on the SG–Thailand DTA to understand which country has primary taxing rights over your income and whether foreign tax credits apply to reduce double taxation.",
+        "url": "https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/tax-residency-and-tax-rates/working-out-my-tax-residency",
+        "isOnline": true
+      },
+      {
+        "title": "Thailand–Singapore Double Taxation Agreement (DTA)",
+        "description": "Review the official DTA between Thailand and Singapore to determine treaty relief available on dividends, interest, employment income, and other categories. The DTA is administered jointly by the Thai Revenue Department and IRAS.",
+        "url": "https://www.rd.go.th/english/766.html",
+        "isOnline": true
+      }
+    ]
+  }
+]
