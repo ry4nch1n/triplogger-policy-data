@@ -320,15 +320,60 @@ def call_claude(client: Anthropic, prompt: str) -> str:
 
 
 def extract_json(text: str) -> dict:
-    """Strip markdown fences if present, parse JSON."""
+    """Extract JSON from model output, handling interleaved reasoning text.
+
+    With web_search enabled, Claude's text blocks may contain reasoning prose
+    around the actual JSON object. We try several strategies:
+    1. Parse the full text as JSON directly.
+    2. Extract from markdown fences (```json ... ```).
+    3. Find the outermost { ... } brace pair in the text.
+    """
     cleaned = text.strip()
-    fence = re.match(r"^```(?:json)?\s*\n(.*?)\n```\s*$", cleaned, re.DOTALL)
-    if fence:
-        cleaned = fence.group(1)
+
+    # Strategy 1: direct parse
     try:
         return json.loads(cleaned)
-    except json.JSONDecodeError as exc:
-        die(f"Model output is not valid JSON: {exc}\n\nFirst 500 chars:\n{text[:500]}")
+    except json.JSONDecodeError:
+        pass
+
+    # Strategy 2: markdown fence
+    fence = re.search(r"```(?:json)?\s*\n(.*?)\n```", cleaned, re.DOTALL)
+    if fence:
+        try:
+            return json.loads(fence.group(1))
+        except json.JSONDecodeError:
+            pass
+
+    # Strategy 3: find outermost { ... } by brace counting
+    start = cleaned.find("{")
+    if start != -1:
+        depth = 0
+        in_string = False
+        escape = False
+        for i in range(start, len(cleaned)):
+            ch = cleaned[i]
+            if escape:
+                escape = False
+                continue
+            if ch == "\\":
+                escape = True
+                continue
+            if ch == '"' and not escape:
+                in_string = not in_string
+                continue
+            if in_string:
+                continue
+            if ch == "{":
+                depth += 1
+            elif ch == "}":
+                depth -= 1
+                if depth == 0:
+                    try:
+                        return json.loads(cleaned[start:i + 1])
+                    except json.JSONDecodeError:
+                        break
+
+    die(f"Model output is not valid JSON: could not extract JSON object\n\nFirst 500 chars:\n{text[:500]}")
 
 
 def sources_markdown(payload: dict) -> str:
