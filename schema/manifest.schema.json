@@ -4,7 +4,11 @@
   "title": "TripLogger Manifest",
   "description": "Root manifest describing supported countries. Fetched by the app on each policy refresh.",
   "type": "object",
-  "required": ["version", "defaultPassportCountry", "countries"],
+  "required": [
+    "version",
+    "defaultPassportCountry",
+    "countries"
+  ],
   "additionalProperties": false,
   "properties": {
     "version": {
@@ -19,23 +23,43 @@
     },
     "countries": {
       "type": "array",
-      "items": { "$ref": "#/definitions/CountryConfig" }
+      "items": {
+        "$ref": "#/definitions/CountryConfig"
+      }
     }
   },
   "definitions": {
     "CountryConfig": {
       "type": "object",
-      "required": ["countryCode", "name", "rulesFile", "documentsFile"],
+      "required": [
+        "countryCode",
+        "name",
+        "rulesFile",
+        "documentsFile"
+      ],
       "additionalProperties": false,
       "properties": {
-        "countryCode": { "type": "string", "pattern": "^[A-Z]{2}$" },
-        "name": { "type": "string", "minLength": 1 },
-        "flagEmoji": { "type": "string" },
+        "countryCode": {
+          "type": "string",
+          "pattern": "^[A-Z]{2}$"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "flagEmoji": {
+          "type": "string"
+        },
         "cities": {
           "type": "array",
-          "items": { "type": "string", "minLength": 1 }
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
         },
-        "defaultCity": { "type": "string" },
+        "defaultCity": {
+          "type": "string"
+        },
         "rulesFile": {
           "type": "string",
           "pattern": "^rules/[A-Z]{2}_[A-Z]{2}\\.json$"
@@ -43,6 +67,14 @@
         "documentsFile": {
           "type": "string",
           "pattern": "^documents/[A-Z]{2}\\.json$"
+        },
+        "visaTypes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "description": "Visa types relevant for this country. Empty or absent = use universal fallback."
         }
       }
     }

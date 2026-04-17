@@ -160,6 +160,17 @@ def write_country_outputs(root: Path, fm: dict, payload: dict) -> None:
     manifest = json.loads(manifest_path.read_text())
     existing_codes = {c["countryCode"] for c in manifest["countries"]}
     if cc not in existing_codes:
+        # Extract unique visa types from the researched rules for the manifest
+        visa_types = sorted({
+            vt
+            for rule in payload["rules"]
+            for vt in rule.get("applicableVisaTypes", [])
+        })
+        # Always include VISA_FREE and OTHER as baseline
+        for base in ("VISA_FREE", "OTHER"):
+            if base not in visa_types:
+                visa_types.append(base)
+
         manifest["countries"].append({
             "countryCode": cc,
             "name": fm["country_name"],
@@ -168,6 +179,7 @@ def write_country_outputs(root: Path, fm: dict, payload: dict) -> None:
             "defaultCity": "",
             "rulesFile": f"rules/{cc}_{pp}.json",
             "documentsFile": f"documents/{cc}.json",
+            "visaTypes": visa_types,
         })
         manifest_path.write_text(json.dumps(manifest, indent=2, ensure_ascii=False) + "\n")
 

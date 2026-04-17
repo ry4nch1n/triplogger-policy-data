@@ -16,7 +16,14 @@
       ],
       "defaultCity": "Shanghai",
       "rulesFile": "rules/CN_SG.json",
-      "documentsFile": "documents/CN.json"
+      "documentsFile": "documents/CN.json",
+      "visaTypes": [
+        "VISA_FREE",
+        "M_VISA",
+        "APEC_ABTC",
+        "TOURIST_VISA",
+        "WORK_PERMIT"
+      ]
     }
   ]
 }
