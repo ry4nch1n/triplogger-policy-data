@@ -11,7 +11,8 @@
         "Beijing",
         "Chengdu",
         "Shenzhen",
-        "Guangzhou"
+        "Guangzhou",
+        "Hangzhou"
       ],
       "defaultCity": "Shanghai",
       "rulesFile": "rules/CN_SG.json",

@@ -78,6 +78,28 @@
         "url": "http://gzwg.gzjd.gov.cn/crj-app-server/crjmsjw/grzssb",
         "location": "Guangzhou",
         "isOnline": true
+      },
+      {
+        "title": "Register Temporary Residence at Local Police Station",
+        "description": "All foreign nationals staying in Hangzhou for more than 24 hours must register with the local public security bureau or community police office. If staying in a hotel certified to accommodate foreigners, registration is completed at check-in. If staying in a private residence, you must report to the local police station or PSB within 24 hours of arrival. Failure to register can result in a warning, fine, or detention.",
+        "url": "https://www.ehangzhou.gov.cn/hz_visas.html",
+        "location": "Hangzhou",
+        "isOnline": false
+      },
+      {
+        "title": "Hangzhou PSB Exit-Entry Administration — Main Office (Wujiang Road)",
+        "description": "The primary Exit-Entry Reception Hall of Hangzhou Municipal Public Security Bureau handles visa-related matters, stay extensions, and temporary residence registration for foreign nationals. Visit in person to verify your permitted stay duration, clarify visa-free entry conditions, or initiate any immigration procedures before your 30-day limit is reached.",
+        "url": "https://en.nia.gov.cn/n167/n262/index.html",
+        "location": "Hangzhou",
+        "address": "No. 169 Wujiang Road, Shangcheng District, Hangzhou City, Zhejiang Province",
+        "isOnline": false
+      },
+      {
+        "title": "National Immigration Administration — Office Locator (Online)",
+        "description": "Use the NIA's official English-language office enquiry page to find the nearest Hangzhou-area Exit-Entry Reception Hall for your specific district (Gongshu, Binjiang, West Lake, Yuhang, Xiaoshan, Qiantang, etc.). Confirm current operating hours before visiting, as hours may vary by branch.",
+        "url": "https://en.nia.gov.cn/n167/n262/index.html",
+        "location": "Hangzhou",
+        "isOnline": true
       }
     ]
   },
@@ -187,6 +209,27 @@
         "url": "http://www.gd-n-tax.gov.cn/gdsw/gzsw_index.shtml",
         "location": "Guangzhou",
         "isOnline": true
+      },
+      {
+        "title": "Hangzhou Municipal Tax Bureau (国家税务总局杭州市税务局)",
+        "description": "If you have stayed in Hangzhou / China for 183 days or more in a calendar year, you may become a Chinese tax resident liable for Individual Income Tax (IIT) on China-sourced income. Visit or contact the Hangzhou Municipal Tax Bureau to register as a taxpayer, file IIT returns, and understand your obligations. The bureau operates the '12366' national tax hotline and a multilingual consultation service (14 languages) for foreign nationals.",
+        "url": "https://hangzhou.chinatax.gov.cn",
+        "location": "Hangzhou",
+        "isOnline": false
+      },
+      {
+        "title": "12366 Multilingual Tax Consultation — Hangzhou Service Station (Online/Phone)",
+        "description": "Hangzhou's State Tax Bureau operates the Belt and Road 12366 Multilingual Tax Consultation Service Station, offering tax guidance in 14 languages for foreign residents and businesses. Use this service to ask about your IIT residency status, filing requirements, and applicable exemptions before and after crossing the 183-day threshold. Dial 12366 or access via the Hangzhou tax bureau portal.",
+        "url": "https://hangzhou.chinatax.gov.cn",
+        "location": "Hangzhou",
+        "isOnline": true
+      },
+      {
+        "title": "Individual Income Tax (IIT) Filing via 'Personal Income Tax' App (Online)",
+        "description": "China's State Taxation Administration provides the official 'Personal Income Tax' (个人所得税) mobile app for IIT registration, annual reconciliation filing, and deduction claims. Foreign nationals in Hangzhou who cross the 183-day threshold should register on the app using their passport number and complete annual filings. Download from major Chinese app stores or the STA website.",
+        "url": "https://www.chinatax.gov.cn",
+        "location": "Hangzhou",
+        "isOnline": true
       }
     ]
   },
@@ -231,6 +274,20 @@
         "description": "Foreigners subject to the 6-year rule can use the Guangzhou Tax Service's online Electronic Tax Bureau for Natural Persons portal to calculate cumulative days of residence, and the smart tax platform's rapid day-count tool. Filing of annual IIT returns and any applicable treaty claims can also be made online. Hotline: 020-12366.",
         "url": "http://www.gd-n-tax.gov.cn/gdsw/gzsw_index.shtml",
         "location": "Guangzhou",
+        "isOnline": true
+      },
+      {
+        "title": "Hangzhou Municipal Tax Bureau — Worldwide Income Declaration",
+        "description": "Foreign individuals who have resided in China for 183 or more days per year for more than six consecutive years become liable for IIT on their worldwide income from the seventh year onward. The six-year clock resets if you spend more than 30 consecutive days outside China in any single tax year. Consult the Hangzhou Municipal Tax Bureau to assess your position, file the required annual IIT return, or formally apply for the overseas-income exemption before the six-year threshold is reached.",
+        "url": "https://hangzhou.chinatax.gov.cn",
+        "location": "Hangzhou",
+        "isOnline": false
+      },
+      {
+        "title": "12366 Multilingual Tax Consultation — Worldwide Income Inquiry (Online/Phone)",
+        "description": "Use the Hangzhou Tax Bureau's 12366 multilingual hotline (available in 14 languages) to obtain guidance specifically on the 6-year worldwide income rule, the 30-day overseas-reset mechanism, and how to file an exemption application with the competent Hangzhou tax authority before liability triggers.",
+        "url": "https://hangzhou.chinatax.gov.cn",
+        "location": "Hangzhou",
         "isOnline": true
       }
     ]
@@ -289,6 +346,14 @@
         "url": "http://gzwg.gzjd.gov.cn/crj-app-server/crjmsjw/tbyysq",
         "location": "Guangzhou",
         "isOnline": true
+      },
+      {
+        "title": "Hangzhou PSB Exit-Entry Administration — Business Visa (M) Queries",
+        "description": "If you have entered Hangzhou on an M (business) visa, or need to confirm whether your activities require one, visit the Hangzhou PSB Exit-Entry Main Office. Officers handle M visa issuance, status verification, and can advise on whether your current visa category matches your intended business activities. Apply at least 7 days before your current authorisation expires.",
+        "url": "https://en.nia.gov.cn/n167/n262/index.html",
+        "location": "Hangzhou",
+        "address": "No. 169 Wujiang Road, Shangcheng District, Hangzhou City, Zhejiang Province",
+        "isOnline": false
       }
     ]
   },
@@ -340,6 +405,22 @@
         "location": "Guangzhou",
         "address": "6/F, No. 155, South Jiefang Road (Jiefang Nan Lu), Guangzhou",
         "isOnline": false
+      },
+      {
+        "title": "Hangzhou PSB Exit-Entry Administration — M Visa Extension",
+        "description": "M visa holders approaching their 60-day single-entry stay limit should visit the Hangzhou PSB Exit-Entry Administration office to apply for an extension. Applications must be submitted at least 7 days before visa expiry. Bring your passport, a completed Visa/Stay Permit Application Form, a recent passport-style photo, a Temporary Residence Registration Form, and supporting documents for your business activities. The PSB will issue a receipt upon acceptance and make a decision within 7 working days.",
+        "url": "https://en.nia.gov.cn/n167/n262/index.html",
+        "location": "Hangzhou",
+        "address": "No. 169 Wujiang Road, Shangcheng District, Hangzhou City, Zhejiang Province",
+        "isOnline": false
+      },
+      {
+        "title": "Hangzhou PSB — Binjiang Branch (Tech/Business District)",
+        "description": "Foreign nationals conducting business in Hangzhou's Binjiang Hi-Tech District can apply for M visa extensions or residence-related services at the Binjiang Branch Exit-Entry Reception Hall, conveniently located in the Haiyue Building.",
+        "url": "https://en.nia.gov.cn/n167/n262/index.html",
+        "location": "Hangzhou",
+        "address": "2/F, Haiyue Building, No. 788 Danfeng Road, Binjiang District, Hangzhou City, Zhejiang Province",
+        "isOnline": false
       }
     ]
   },
@@ -381,6 +462,14 @@
         "url": "http://www.gz.gov.cn/guangzhouinternational/residents/entryexitandresidenceprocedures/",
         "location": "Guangzhou",
         "address": "6/F, No. 155, South Jiefang Road (Jiefang Nan Lu), Guangzhou",
+        "isOnline": false
+      },
+      {
+        "title": "Hangzhou PSB Exit-Entry Administration — APEC ABTC Stay Queries",
+        "description": "APEC Business Travel Card (ABTC) holders entering Hangzhou are permitted a stay of up to 60 days per visit. If you need to verify entry conditions, extend your stay, or address any queries about ABTC-based entry, visit the Hangzhou PSB Exit-Entry Main Office. Bring your ABTC card and passport. Extensions must be applied for at least 7 days before your authorised stay expires.",
+        "url": "https://en.nia.gov.cn/n167/n262/index.html",
+        "location": "Hangzhou",
+        "address": "No. 169 Wujiang Road, Shangcheng District, Hangzhou City, Zhejiang Province",
         "isOnline": false
       }
     ]
@@ -426,6 +515,29 @@
         "location": "Guangzhou",
         "address": "2/F, Building 3, Government Compound, No. 1, Fuqian Road, Guangzhou",
         "isOnline": false
+      },
+      {
+        "title": "Hangzhou PSB Exit-Entry Administration — L Visa Extension",
+        "description": "Tourist (L) visa holders approaching the 30-day single-entry limit can apply for an extension at the Hangzhou PSB Exit-Entry Administration office. Apply at least 7 days before expiry. Required documents include: valid passport and current visa, completed Visa/Stay Permit Application Form, a recent passport-style photo, Temporary Residence Registration slip from your hotel or local police station, and a travel itinerary as justification. The PSB issues a receipt upon acceptance and decides within 7 working days. Extensions on tourist visas are granted sparingly and are not guaranteed.",
+        "url": "https://en.nia.gov.cn/n167/n262/index.html",
+        "location": "Hangzhou",
+        "address": "No. 169 Wujiang Road, Shangcheng District, Hangzhou City, Zhejiang Province",
+        "isOnline": false
+      },
+      {
+        "title": "Hangzhou PSB — West Lake Branch (Tourist Area)",
+        "description": "Tourists staying in the West Lake scenic area of Hangzhou can conveniently visit the West Lake Branch Exit-Entry Reception Hall for L visa extension applications or temporary residence registration queries.",
+        "url": "https://en.nia.gov.cn/n167/n262/index.html",
+        "location": "Hangzhou",
+        "address": "West 3/F, Xihu Administrative Service Center, No. 858 Wenyi West Road, Xihu District, Hangzhou City, Zhejiang Province",
+        "isOnline": false
+      },
+      {
+        "title": "eHangzhou Official Visa Information Portal (Online)",
+        "description": "The official English-language portal of the Hangzhou Municipal People's Government provides up-to-date visa news, policy announcements, and links to local immigration resources for visitors. Check here for the latest visa-free policy updates, tourist entry conditions, and local government announcements before your trip.",
+        "url": "https://www.ehangzhou.gov.cn/hz_visas.html",
+        "location": "Hangzhou",
+        "isOnline": true
       }
     ]
   }
