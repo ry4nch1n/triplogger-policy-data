@@ -9,7 +9,9 @@
     "cautionThresholdPercent": 70,
     "warningThresholdPercent": 85,
     "criticalThresholdPercent": 95,
-    "applicableVisaTypes": ["VISA_FREE"],
+    "applicableVisaTypes": [
+      "VISA_FREE"
+    ],
     "validFrom": "2024-02-09",
     "validUntil": "2026-12-31",
     "isActive": true,
@@ -17,11 +19,66 @@
     "suggestion": "Apply for an M Visa (business) before your trip, or exit China and re-enter for a fresh 30-day period.",
     "detailedExplanation": "Under the mutual visa-exemption arrangement between Singapore and China (effective 9 Feb 2024), Singapore ordinary passport holders may enter China without a visa for stays up to 30 days.\n\nThe 30-day count starts from the day of entry (day 1). You must exit China by the end of day 30. Overstaying even by one day can result in fines (RMB 500 per day, up to RMB 10,000), detention, or a ban on re-entry.\n\nThis policy covers short-term business visits, tourism, and family visits. It does NOT cover employment or journalism activities.\n\nIf you need to stay longer than 30 days, you must apply for a proper visa (M Visa for business) BEFORE entering China. You cannot convert a visa-free entry to a visa after arrival.",
     "actionSteps": [
-      {"title": "Apply for M Visa online", "description": "Start your M Visa application at the Chinese Visa Application Service Center (CVASC) online portal. You will need an invitation letter from your Chinese business partner.", "url": "https://www.visaforchina.cn/SGP2_EN/", "location": "online", "isOnline": true},
-      {"title": "CVASC Singapore Office", "description": "Submit your M Visa application in person. Processing takes 4 working days (standard) or 2-3 days (express). Bring passport, completed form, invitation letter, and photo.", "url": "https://www.visaforchina.cn/SGP2_EN/aboutus/277090.shtml", "location": "SG", "address": "80 Robinson Road, #09-01/02, Singapore 068898", "isOnline": false},
-      {"title": "Exit and re-enter China", "description": "If approaching the 30-day limit, exit to a nearby destination (Hong Kong, Macau, Japan, South Korea) and re-enter for a fresh 30-day visa-free period. Note: subject to the 90-day rolling window limit.", "location": "online", "isOnline": true},
-      {"title": "Shanghai Exit-Entry Administration", "description": "For visa extensions while in Shanghai. Extensions are at the discretion of the PSB and are not guaranteed. Apply at least 7 days before expiry.", "url": "https://gaj.sh.gov.cn/crj/", "location": "Shanghai", "address": "1500 Minsheng Road, Pudong New Area, Shanghai", "isOnline": false},
-      {"title": "Beijing Exit-Entry Administration", "description": "For visa extensions while in Beijing. Apply at least 7 days before your visa-free period expires.", "url": "https://gaj.beijing.gov.cn/", "location": "Beijing", "address": "2 Andingmen East Street, Dongcheng District, Beijing", "isOnline": false}
+      {
+        "title": "Apply for M Visa online",
+        "description": "Start your M Visa application at the Chinese Visa Application Service Center (CVASC) online portal. You will need an invitation letter from your Chinese business partner.",
+        "url": "https://www.visaforchina.cn/SGP2_EN/",
+        "location": "online",
+        "isOnline": true
+      },
+      {
+        "title": "CVASC Singapore Office",
+        "description": "Submit your M Visa application in person. Processing takes 4 working days (standard) or 2-3 days (express). Bring passport, completed form, invitation letter, and photo.",
+        "url": "https://www.visaforchina.cn/SGP2_EN/aboutus/277090.shtml",
+        "location": "SG",
+        "address": "80 Robinson Road, #09-01/02, Singapore 068898",
+        "isOnline": false
+      },
+      {
+        "title": "Exit and re-enter China",
+        "description": "If approaching the 30-day limit, exit to a nearby destination (Hong Kong, Macau, Japan, South Korea) and re-enter for a fresh 30-day visa-free period. Note: subject to the 90-day rolling window limit.",
+        "location": "online",
+        "isOnline": true
+      },
+      {
+        "title": "Shanghai Exit-Entry Administration",
+        "description": "For visa extensions while in Shanghai. Extensions are at the discretion of the PSB and are not guaranteed. Apply at least 7 days before expiry.",
+        "url": "https://gaj.sh.gov.cn/crj/",
+        "location": "Shanghai",
+        "address": "1500 Minsheng Road, Pudong New Area, Shanghai",
+        "isOnline": false
+      },
+      {
+        "title": "Beijing Exit-Entry Administration",
+        "description": "For visa extensions while in Beijing. Apply at least 7 days before your visa-free period expires.",
+        "url": "https://gaj.beijing.gov.cn/",
+        "location": "Beijing",
+        "address": "2 Andingmen East Street, Dongcheng District, Beijing",
+        "isOnline": false
+      },
+      {
+        "title": "Visit Guangzhou PSB Exit-Entry Administration Before Stay Expires",
+        "description": "Singapore passport holders enjoy visa-free entry to China for up to 30 days per stay. If you need to extend or change your stay status, you must apply in person at the Entry and Exit Administration Office of Guangzhou Municipal Public Security Bureau before your permitted stay expires. Processing takes approximately five working days, so apply well in advance. Bring your valid passport, completed visa/residence application form, a recent 2-inch photo, and your Temporary Accommodation Registration Form.",
+        "url": "http://www.gz.gov.cn/guangzhouinternational/residents/entryexitandresidenceprocedures/",
+        "location": "Guangzhou",
+        "address": "6/F, No. 155, South Jiefang Road (Jiefang Nan Lu), Guangzhou",
+        "isOnline": false
+      },
+      {
+        "title": "Register Temporary Residence Within 24 Hours of Arrival",
+        "description": "All foreign nationals staying in non-hotel accommodation in Guangzhou must register with the local police station within 24 hours of arrival. Hotels register guests automatically. If staying with friends, family, or in a private rental, visit your nearest neighbourhood police station to obtain a Temporary Residence Registration Form (临时住宿登记表). This registration is a prerequisite for any subsequent visa extension or residence permit application at the PSB.",
+        "url": "http://www.gz.gov.cn/guangzhouinternational/residents/entryexitandresidenceprocedures/",
+        "location": "Guangzhou",
+        "address": "Nearest local neighbourhood police station (派出所) to your place of stay, Guangzhou",
+        "isOnline": false
+      },
+      {
+        "title": "Online Foreigner Self-Registration System (Guangzhou PSB)",
+        "description": "Guangzhou Public Security Bureau provides an online integrated service system for foreigners to handle certain accommodation self-registration and appointment-related matters digitally. Use this portal to register temporary accommodation online where eligible, or to book appointments for in-person PSB services. Available to foreigners and Hong Kong/Macao/Taiwan residents.",
+        "url": "http://gzwg.gzjd.gov.cn/crj-app-server/crjmsjw/grzssb",
+        "location": "Guangzhou",
+        "isOnline": true
+      }
     ]
   },
   {
@@ -35,14 +92,44 @@
     "cautionThresholdPercent": 70,
     "warningThresholdPercent": 85,
     "criticalThresholdPercent": 95,
-    "applicableVisaTypes": ["VISA_FREE"],
+    "applicableVisaTypes": [
+      "VISA_FREE"
+    ],
     "isActive": true,
     "priority": 2,
     "suggestion": "Consider applying for a multi-entry M Visa to avoid the 90-day visa-free rolling limit.",
     "detailedExplanation": "The rolling window rule counts all your visa-free days in China within any 180-day period. Unlike the calendar year tax rule, this is a sliding window — it looks back 180 days from today.\n\nExample: If you spent 60 visa-free days in China over the past 180 days, you can only stay 30 more visa-free days.\n\nThis rule only applies to visa-free entries. Days under an M Visa or work permit are NOT counted.\n\nFor frequent business travellers, a multi-entry M Visa is strongly recommended.",
     "actionSteps": [
-      {"title": "Apply for multi-entry M Visa", "description": "A multi-entry M Visa (6 or 12-month) allows stays of 60 or 90 days per entry and is not subject to the 90/180 rolling window.", "url": "https://www.visaforchina.cn/SGP2_EN/", "location": "online", "isOnline": true},
-      {"title": "CVASC Singapore — M Visa", "description": "Apply in person. Requires invitation letter, company registration, and recent business correspondence.", "url": "https://www.visaforchina.cn/SGP2_EN/aboutus/277090.shtml", "location": "SG", "address": "80 Robinson Road, #09-01/02, Singapore 068898", "isOnline": false}
+      {
+        "title": "Apply for multi-entry M Visa",
+        "description": "A multi-entry M Visa (6 or 12-month) allows stays of 60 or 90 days per entry and is not subject to the 90/180 rolling window.",
+        "url": "https://www.visaforchina.cn/SGP2_EN/",
+        "location": "online",
+        "isOnline": true
+      },
+      {
+        "title": "CVASC Singapore — M Visa",
+        "description": "Apply in person. Requires invitation letter, company registration, and recent business correspondence.",
+        "url": "https://www.visaforchina.cn/SGP2_EN/aboutus/277090.shtml",
+        "location": "SG",
+        "address": "80 Robinson Road, #09-01/02, Singapore 068898",
+        "isOnline": false
+      },
+      {
+        "title": "Monitor Stay Days via Guangzhou PSB Online Foreigner Services Portal",
+        "description": "To avoid breaching the 90-day rolling window, track your cumulative days in China carefully. The Guangzhou PSB's online system for foreigners can assist with accommodation registration status checks. For queries on stay duration and rolling window calculations, contact the Entry and Exit Administration Office (Tel: 96110110 / 020-12345). Processing of any extension takes at minimum five working days — do not wait until the final days of your permitted stay.",
+        "url": "http://gzwg.gzjd.gov.cn/crj-app-server",
+        "location": "Guangzhou",
+        "isOnline": true
+      },
+      {
+        "title": "Visit Guangzhou PSB Exit-Entry Administration for Stay Queries or Extension",
+        "description": "If your cumulative stay is approaching the 90-day rolling window limit, visit the Entry and Exit Administration Office of Guangzhou Municipal Public Security Bureau for guidance or to apply for a change of visa status. Office hours: Monday–Friday, 08:30–12:00 and 14:00–17:30. Statutory holidays excluded. Bring your passport and Temporary Residence Registration Form.",
+        "url": "http://www.gz.gov.cn/guangzhouinternational/residents/entryexitandresidenceprocedures/",
+        "location": "Guangzhou",
+        "address": "6/F, No. 155, South Jiefang Road (Jiefang Nan Lu), Guangzhou",
+        "isOnline": false
+      }
     ]
   },
   {
@@ -60,9 +147,47 @@
     "suggestion": "Plan trips to keep total full days below 183 in the calendar year.",
     "detailedExplanation": "Under China's IIT Law, a non-domiciled individual residing 183+ days in a tax year (Jan 1 - Dec 31) is a resident taxpayer.\n\nDay counting: Only FULL 24-hour days count. Arrival day and departure day are excluded.\nExample: Arriving April 19, departing May 15 = 25 calendar days, but only 24 full days.\n\nTax implications for Singapore citizens:\n- Pay China IIT on all China-source income\n- Singapore-China DTA may provide relief on certain income\n- Still file taxes in Singapore — claim foreign tax credits via IRAS\n\nStrategy: If approaching 183 days, delay your next trip to the following year or shorten a planned trip.",
     "actionSteps": [
-      {"title": "Singapore-China DTA guide", "description": "Review the Double Taxation Agreement to understand which income is taxable where.", "url": "https://www.iras.gov.sg/taxes/international-tax/list-of-dtas-limited-treaties-and-eoi-arrangements", "location": "online", "isOnline": true},
-      {"title": "IRAS foreign tax credit", "description": "If you pay tax in China, claim a foreign tax credit in Singapore to avoid double taxation.", "url": "https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/tax-reliefs-rebates-and-deductions/foreign-tax-credit", "location": "online", "isOnline": true},
-      {"title": "Consult a cross-border tax advisor", "description": "For complex situations (dual income, stock options, etc.), consult a professional experienced in SG-China tax matters.", "location": "SG", "isOnline": false}
+      {
+        "title": "Singapore-China DTA guide",
+        "description": "Review the Double Taxation Agreement to understand which income is taxable where.",
+        "url": "https://www.iras.gov.sg/taxes/international-tax/list-of-dtas-limited-treaties-and-eoi-arrangements",
+        "location": "online",
+        "isOnline": true
+      },
+      {
+        "title": "IRAS foreign tax credit",
+        "description": "If you pay tax in China, claim a foreign tax credit in Singapore to avoid double taxation.",
+        "url": "https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/tax-reliefs-rebates-and-deductions/foreign-tax-credit",
+        "location": "online",
+        "isOnline": true
+      },
+      {
+        "title": "Consult a cross-border tax advisor",
+        "description": "For complex situations (dual income, stock options, etc.), consult a professional experienced in SG-China tax matters.",
+        "location": "SG",
+        "isOnline": false
+      },
+      {
+        "title": "Contact Guangzhou Municipal Taxation Bureau (State Administration of Taxation)",
+        "description": "If you have resided in Guangzhou (and China) for an aggregate of 183 days or more within a tax year, you are classified as a tax resident and your worldwide income becomes subject to Chinese Individual Income Tax (IIT). Contact the Guangzhou Municipal Taxation Bureau of the State Administration of Taxation for guidance on registration, filing obligations, and applicable tax treaties between China and Singapore. Tax hotline: 020-12366.",
+        "url": "http://guangdong.chinatax.gov.cn/gdsw/gzsw/gzsw_index.shtml",
+        "location": "Guangzhou",
+        "isOnline": false
+      },
+      {
+        "title": "File Individual Income Tax via China Tax App or Electronic Tax Bureau",
+        "description": "Resident individuals in Guangzhou who meet the 183-day threshold must file annual IIT reconciliation returns. You can declare and pay tax via the Individual Income Tax mobile app, the Electronic Tax Bureau for Natural Persons web portal, by postal declaration, or by visiting a local tax service centre. The Guangzhou tax bureau offers multilingual guidance (Chinese, English, Japanese, Korean) through its official WeChat account and online channels.",
+        "url": "http://guangdong.chinatax.gov.cn/gdsw/gzsw/gzsw_index.shtml",
+        "location": "Guangzhou",
+        "isOnline": true
+      },
+      {
+        "title": "Use Guangzhou Tax Smart Platform for Non-Resident Day Calculation",
+        "description": "The Guangzhou Tax Service, State Administration of Taxation, provides a smart online platform with tools including rapid calculation of days of residence for non-resident individuals, a quick search for China's tax treaties (including the China–Singapore DTA), online applications for Certificate of Chinese Fiscal Residency, and the 12366 tax service hotline. The platform is available in both simplified Chinese and English.",
+        "url": "http://www.gd-n-tax.gov.cn/gdsw/gzsw_index.shtml",
+        "location": "Guangzhou",
+        "isOnline": true
+      }
     ]
   },
   {
@@ -82,8 +207,32 @@
     "suggestion": "Take at least one trip of 31+ consecutive days outside China each year to reset the counter.",
     "detailedExplanation": "The 6-year rule determines when worldwide income becomes taxable in China.\n\nYears 1-6: Tax resident status means you pay IIT on China-source income only.\nYear 7+: If 6 consecutive years pass without a reset, ALL worldwide income becomes taxable.\n\nHow to reset:\n1. Stay fewer than 183 days in any calendar year, OR\n2. Leave China for 31+ continuous days in any tax-resident year.\n\nStrategy: Plan one extended trip home (31+ days) every year. This resets the counter permanently. The 31 days must be CONTINUOUS — multiple shorter trips do not count.",
     "actionSteps": [
-      {"title": "Plan annual 31+ day trip outside China", "description": "Schedule a continuous 31+ day period outside China each year. This can be home leave, vacation, or overseas business travel.", "location": "online", "isOnline": true},
-      {"title": "Consult a China IIT specialist", "description": "The 6-year rule has nuances depending on your income structure. A specialist can help plan optimally.", "location": "SG", "isOnline": false}
+      {
+        "title": "Plan annual 31+ day trip outside China",
+        "description": "Schedule a continuous 31+ day period outside China each year. This can be home leave, vacation, or overseas business travel.",
+        "location": "online",
+        "isOnline": true
+      },
+      {
+        "title": "Consult a China IIT specialist",
+        "description": "The 6-year rule has nuances depending on your income structure. A specialist can help plan optimally.",
+        "location": "SG",
+        "isOnline": false
+      },
+      {
+        "title": "Consult Guangzhou Municipal Taxation Bureau on 6-Year Exemption Rule",
+        "description": "Under China's IIT rules, a foreign individual who has not been domiciled in China but has resided in China for six consecutive tax years (183+ days each year) without a single absence of 30 or more days may become liable for worldwide income tax in the seventh year onwards. To assess your status, reset the six-year clock, or confirm eligibility for exemption, consult the Guangzhou Municipal Taxation Bureau of the State Administration of Taxation. Tax advisory hotline: 020-12366. The China–Singapore Double Tax Agreement (DTA) may provide relief — seek professional tax advice.",
+        "url": "http://guangdong.chinatax.gov.cn/gdsw/gzsw/gzsw_index.shtml",
+        "location": "Guangzhou",
+        "isOnline": false
+      },
+      {
+        "title": "Verify Six-Year Residency Count via Electronic Tax Bureau Portal",
+        "description": "Foreigners subject to the 6-year rule can use the Guangzhou Tax Service's online Electronic Tax Bureau for Natural Persons portal to calculate cumulative days of residence, and the smart tax platform's rapid day-count tool. Filing of annual IIT returns and any applicable treaty claims can also be made online. Hotline: 020-12366.",
+        "url": "http://www.gd-n-tax.gov.cn/gdsw/gzsw_index.shtml",
+        "location": "Guangzhou",
+        "isOnline": true
+      }
     ]
   },
   {
@@ -96,15 +245,51 @@
     "cautionThresholdPercent": 70,
     "warningThresholdPercent": 85,
     "criticalThresholdPercent": 95,
-    "applicableVisaTypes": ["VISA_FREE"],
+    "applicableVisaTypes": [
+      "VISA_FREE"
+    ],
     "isActive": true,
     "priority": 5,
     "suggestion": "Apply for an M Visa at CVASC Singapore before your trip.",
     "detailedExplanation": "If your trip exceeds 30 days, you MUST obtain an M Visa before entering China. You cannot enter visa-free and convert to a visa afterwards.\n\nM Visa types:\n- Single-entry: One entry, 30/60/90 days\n- Double-entry: Two entries within validity\n- Multi-entry 6-month: Multiple entries, up to 60 days each\n- Multi-entry 12-month: Multiple entries, up to 90 days each\n\nRequired documents:\n1. Valid passport (6+ months validity, 2+ blank pages)\n2. Completed application form\n3. Passport photo (48x33mm, white background)\n4. Invitation letter from Chinese company\n5. Business registration of inviting company\n6. Your company's introduction letter\n\nProcessing: 4 working days (standard), 2-3 days (express), 1 day (rush).",
     "actionSteps": [
-      {"title": "Download visa application form", "description": "Complete the form online before visiting the CVASC office.", "url": "https://www.visaforchina.cn/SGP2_EN/generalinformation/visaknowledge/284342.shtml", "location": "online", "isOnline": true},
-      {"title": "CVASC Singapore Office", "description": "Submit application in person. Mon-Fri 9:00-15:00. Standard processing: 4 days, SGD 40.", "url": "https://www.visaforchina.cn/SGP2_EN/aboutus/277090.shtml", "location": "SG", "address": "80 Robinson Road, #09-01/02, Singapore 068898", "isOnline": false},
-      {"title": "Check visa status", "description": "Track your application status online using your application number.", "url": "https://www.visaforchina.cn/SGP2_EN/progress/277088.shtml", "location": "online", "isOnline": true}
+      {
+        "title": "Download visa application form",
+        "description": "Complete the form online before visiting the CVASC office.",
+        "url": "https://www.visaforchina.cn/SGP2_EN/generalinformation/visaknowledge/284342.shtml",
+        "location": "online",
+        "isOnline": true
+      },
+      {
+        "title": "CVASC Singapore Office",
+        "description": "Submit application in person. Mon-Fri 9:00-15:00. Standard processing: 4 days, SGD 40.",
+        "url": "https://www.visaforchina.cn/SGP2_EN/aboutus/277090.shtml",
+        "location": "SG",
+        "address": "80 Robinson Road, #09-01/02, Singapore 068898",
+        "isOnline": false
+      },
+      {
+        "title": "Check visa status",
+        "description": "Track your application status online using your application number.",
+        "url": "https://www.visaforchina.cn/SGP2_EN/progress/277088.shtml",
+        "location": "online",
+        "isOnline": true
+      },
+      {
+        "title": "Apply for M Visa Extension at Guangzhou PSB Exit-Entry Administration",
+        "description": "Holders of an M Visa (commercial/trade activities) in Guangzhou who need to extend their stay beyond the visa-free period must apply at the Entry and Exit Administration Office of Guangzhou Municipal Public Security Bureau. Required documents include: valid passport, completed Visa/Residence Application Form, recent 2-inch photo, Temporary Accommodation Registration Form, a business/invitation letter from the Chinese inviting entity, and any relevant business registration proof. Processing takes approximately five working days.",
+        "url": "http://www.gz.gov.cn/guangzhouinternational/residents/entryexitandresidenceprocedures/",
+        "location": "Guangzhou",
+        "address": "6/F, No. 155, South Jiefang Road (Jiefang Nan Lu), Guangzhou",
+        "isOnline": false
+      },
+      {
+        "title": "Book PSB Appointment Online via Guangzhou Foreigner Services Portal",
+        "description": "Guangzhou PSB operates an integrated online system for foreigners including appointment booking for in-person services such as M Visa-related applications and extensions. Use the online portal before visiting the office to reduce waiting time. Website is operated by Guangzhou Municipal Public Security Bureau.",
+        "url": "http://gzwg.gzjd.gov.cn/crj-app-server/crjmsjw/tbyysq",
+        "location": "Guangzhou",
+        "isOnline": true
+      }
     ]
   },
   {
@@ -117,15 +302,45 @@
     "cautionThresholdPercent": 70,
     "warningThresholdPercent": 85,
     "criticalThresholdPercent": 95,
-    "applicableVisaTypes": ["M_VISA", "BUSINESS_VISA"],
+    "applicableVisaTypes": [
+      "M_VISA",
+      "BUSINESS_VISA"
+    ],
     "isActive": true,
     "priority": 6,
     "suggestion": "Check your M Visa's 'Duration of Each Stay' stamp. If approaching it, exit China or apply for an extension at the local PSB Exit-Entry Administration at least 7 days before expiry.",
     "detailedExplanation": "China M Visas are marked with a 'Duration of Each Stay' value — usually 30, 60, or 90 days. This is the maximum continuous stay allowed per entry.\n\nVariants:\n- Single-entry (01): one entry, typically 30 days\n- Double-entry (02): two entries, typically 30-60 days each\n- Multi-entry (M): many entries within validity, typically 60-90 days each\n\nThe default threshold here is 60 days as a conservative mid-point. If your actual visa grants 30 or 90 days, the card may flag early or late — check your visa to confirm.\n\nOverstaying an M Visa carries the same penalties as overstaying visa-free entry (RMB 500/day fine up to RMB 10,000, detention, and potential re-entry ban).\n\nExtensions may be granted at PSB Exit-Entry offices at the discretion of local authorities. Apply at least 7 days before expiry.",
     "actionSteps": [
-      {"title": "Shanghai Exit-Entry Administration", "description": "Apply for M Visa extension in Shanghai. Extensions at PSB discretion. Apply at least 7 days before expiry.", "url": "https://gaj.sh.gov.cn/crj/", "location": "Shanghai", "address": "1500 Minsheng Road, Pudong New Area, Shanghai", "isOnline": false},
-      {"title": "Beijing Exit-Entry Administration", "description": "Apply for M Visa extension in Beijing. Apply at least 7 days before expiry.", "url": "https://gaj.beijing.gov.cn/", "location": "Beijing", "address": "2 Andingmen East Street, Dongcheng District, Beijing", "isOnline": false},
-      {"title": "Exit and re-enter on multi-entry M Visa", "description": "If you have a multi-entry M Visa, exiting and re-entering resets the per-entry stay clock. Subject to the visa's total validity and any per-year maximums.", "location": "online", "isOnline": true}
+      {
+        "title": "Shanghai Exit-Entry Administration",
+        "description": "Apply for M Visa extension in Shanghai. Extensions at PSB discretion. Apply at least 7 days before expiry.",
+        "url": "https://gaj.sh.gov.cn/crj/",
+        "location": "Shanghai",
+        "address": "1500 Minsheng Road, Pudong New Area, Shanghai",
+        "isOnline": false
+      },
+      {
+        "title": "Beijing Exit-Entry Administration",
+        "description": "Apply for M Visa extension in Beijing. Apply at least 7 days before expiry.",
+        "url": "https://gaj.beijing.gov.cn/",
+        "location": "Beijing",
+        "address": "2 Andingmen East Street, Dongcheng District, Beijing",
+        "isOnline": false
+      },
+      {
+        "title": "Exit and re-enter on multi-entry M Visa",
+        "description": "If you have a multi-entry M Visa, exiting and re-entering resets the per-entry stay clock. Subject to the visa's total validity and any per-year maximums.",
+        "location": "online",
+        "isOnline": true
+      },
+      {
+        "title": "Apply to Extend M Visa Stay Before Expiry at Guangzhou PSB",
+        "description": "M Visa holders in Guangzhou are permitted stays of up to 60 days per entry. If additional time is needed for legitimate business or trade activities, apply for a stay extension before your current authorised stay expires at the Entry and Exit Administration Office of Guangzhou Municipal Public Security Bureau. Office hours: Monday–Friday, 08:30–12:00 and 14:00–17:30. Note: it takes approximately five working days to process and issue extended stay documents. Do not overstay, as this carries fines and can affect future entry.",
+        "url": "http://www.gz.gov.cn/guangzhouinternational/residents/entryexitandresidenceprocedures/",
+        "location": "Guangzhou",
+        "address": "6/F, No. 155, South Jiefang Road (Jiefang Nan Lu), Guangzhou",
+        "isOnline": false
+      }
     ]
   },
   {
@@ -138,14 +353,36 @@
     "cautionThresholdPercent": 70,
     "warningThresholdPercent": 85,
     "criticalThresholdPercent": 95,
-    "applicableVisaTypes": ["APEC_ABTC"],
+    "applicableVisaTypes": [
+      "APEC_ABTC"
+    ],
     "isActive": true,
     "priority": 7,
     "suggestion": "If you need more than 60 days, apply for an M Visa separately or exit and re-enter (subject to reasonable use).",
     "detailedExplanation": "The APEC Business Travel Card (ABTC) is a 5-year card issued by Singapore ICA to eligible frequent business travellers. Pre-cleared economies — including China — accept the card in place of a visa for short-term business visits.\n\nFor China specifically, ABTC holders can stay up to 60 days per entry. The card does NOT exempt you from the 183-day tax residency threshold, and days under an ABTC still count toward Chinese tax residency (physical-presence-based).\n\nWhat the card shows on the back determines which economies have pre-cleared you — confirm 'CHN' appears before relying on it for China entry.\n\nCard benefits:\n- No visa application required per trip\n- Fast-track immigration at major APEC airports\n- Single document for multiple APEC economies\n\nLimits:\n- 60-day per-entry stay in China\n- Business purpose only (not tourism or employment)\n- Card holder must be a pre-cleared traveller",
     "actionSteps": [
-      {"title": "Apply or renew ABTC (Singapore ICA)", "description": "Singapore ICA issues ABTCs. Eligibility: frequent business travel to APEC economies, Singapore citizen, no criminal record.", "url": "https://www.ica.gov.sg/enter-transit-depart/apec-business-travel-card", "location": "SG", "isOnline": true},
-      {"title": "APEC Business Mobility Group — ABTC info", "description": "Official APEC guidance on ABTC use, pre-clearance economies, and validity rules.", "url": "https://www.apec.org/groups/committee-on-trade-and-investment/business-mobility-group", "location": "online", "isOnline": true}
+      {
+        "title": "Apply or renew ABTC (Singapore ICA)",
+        "description": "Singapore ICA issues ABTCs. Eligibility: frequent business travel to APEC economies, Singapore citizen, no criminal record.",
+        "url": "https://www.ica.gov.sg/enter-transit-depart/apec-business-travel-card",
+        "location": "SG",
+        "isOnline": true
+      },
+      {
+        "title": "APEC Business Mobility Group — ABTC info",
+        "description": "Official APEC guidance on ABTC use, pre-clearance economies, and validity rules.",
+        "url": "https://www.apec.org/groups/committee-on-trade-and-investment/business-mobility-group",
+        "location": "online",
+        "isOnline": true
+      },
+      {
+        "title": "Confirm APEC ABTC Entry Conditions at Guangzhou PSB Exit-Entry Administration",
+        "description": "APEC Business Travel Card (ABTC) holders from Singapore may enter China for up to 60 days per stay for business purposes. If your stay needs to be extended beyond 60 days, you must apply at the Entry and Exit Administration Office of Guangzhou Municipal Public Security Bureau before expiry. Bring your ABTC card, passport, and supporting business documentation. Contact the office for the most current ABTC processing requirements. Tel: 96110110 / 020-12345.",
+        "url": "http://www.gz.gov.cn/guangzhouinternational/residents/entryexitandresidenceprocedures/",
+        "location": "Guangzhou",
+        "address": "6/F, No. 155, South Jiefang Road (Jiefang Nan Lu), Guangzhou",
+        "isOnline": false
+      }
     ]
   },
   {
@@ -158,13 +395,38 @@
     "cautionThresholdPercent": 70,
     "warningThresholdPercent": 85,
     "criticalThresholdPercent": 95,
-    "applicableVisaTypes": ["TOURIST_VISA"],
+    "applicableVisaTypes": [
+      "TOURIST_VISA"
+    ],
     "isActive": true,
     "priority": 8,
     "suggestion": "For stays beyond 30 days, apply for an L Visa with longer per-entry duration, or exit and re-enter.",
     "detailedExplanation": "China L Visa (Tourist) is for non-business tourism. For Singapore passport holders, the L Visa is rarely needed — the SG-CN visa-free arrangement already covers up to 30 days of tourism.\n\nL Visa sub-types:\n- Single-entry: typically 30 days per entry\n- Double-entry: two entries, 30 days each\n- Multi-entry 6-month: multiple entries, 30 days each\n\nUse cases:\n- Tourism stays longer than 30 days (combine with extension)\n- Tourism after the visa-free arrangement expires (currently in force until 31 Dec 2026)\n\nThe default threshold shown is 30 days — verify against your L Visa's stamp.",
     "actionSteps": [
-      {"title": "Apply for L Visa at CVASC", "description": "Start the L Visa application at the Chinese Visa Application Service Center Singapore.", "url": "https://www.visaforchina.cn/SGP2_EN/", "location": "SG", "address": "80 Robinson Road, #09-01/02, Singapore 068898", "isOnline": false}
+      {
+        "title": "Apply for L Visa at CVASC",
+        "description": "Start the L Visa application at the Chinese Visa Application Service Center Singapore.",
+        "url": "https://www.visaforchina.cn/SGP2_EN/",
+        "location": "SG",
+        "address": "80 Robinson Road, #09-01/02, Singapore 068898",
+        "isOnline": false
+      },
+      {
+        "title": "Apply for L Visa Stay Extension at Guangzhou PSB Exit-Entry Administration",
+        "description": "Tourist (L) Visa holders in Guangzhou are generally permitted a stay of up to 30 days per entry. Extensions may be granted in exceptional circumstances (e.g., medical emergency, force majeure) upon application to the Entry and Exit Administration Office of Guangzhou Municipal Public Security Bureau before the current stay expires. Required documents typically include: valid passport, completed application form, recent 2-inch photo, Temporary Accommodation Registration Form, and supporting documentation for the reason of extension. Note: routine tourism extensions are not commonly approved; plan your trip to depart within the authorised stay.",
+        "url": "http://www.gz.gov.cn/guangzhouinternational/residents/entryexitandresidenceprocedures/",
+        "location": "Guangzhou",
+        "address": "6/F, No. 155, South Jiefang Road (Jiefang Nan Lu), Guangzhou",
+        "isOnline": false
+      },
+      {
+        "title": "Guangzhou Foreign Affairs Office — Assistance for Foreigners",
+        "description": "The Guangzhou Municipal Foreign Affairs Office (广州市外事办公室) can provide guidance and coordination for foreign nationals in Guangzhou who face exceptional circumstances affecting their stay, including referrals to appropriate government bodies for visa and residence matters, and general support for foreigners. Tel: 83125519.",
+        "url": "http://www.gzfao.gov.cn/",
+        "location": "Guangzhou",
+        "address": "2/F, Building 3, Government Compound, No. 1, Fuqian Road, Guangzhou",
+        "isOnline": false
+      }
     ]
   }
 ]
