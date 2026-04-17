@@ -46,10 +46,24 @@ if [ "$REQUEST_TYPE" = "missing_city" ]; then
     exit 0
   fi
   if [ ! -f "rules/${COUNTRY_CODE}_SG.json" ]; then
-    echo "Issue #$N: country data for ${COUNTRY_CODE} does not exist yet — skipping city."
-    gh issue comment "$N" --body "Auto-research skipped: country data for **${COUNTRY_NAME}** (\`${COUNTRY_CODE}\`) must exist before adding city-specific data. Please file a \`missing-country\` issue first."
-    echo "::endgroup::"
-    exit 0
+    echo "Issue #$N: country data for ${COUNTRY_CODE} does not exist yet — auto-escalating to country research."
+    gh issue comment "$N" --body "Country data for **${COUNTRY_NAME}** (\`${COUNTRY_CODE}\`) doesn't exist yet. Auto-escalating: researching the full country first. City data for **${CITY}** will be added in a follow-up run."
+    # Escalate: treat this as a missing-country request instead
+    REQUEST_TYPE="missing_country"
+    # Rewrite the issue body with country frontmatter so research.py can process it
+    cat > /tmp/issue-body.md <<ESCALATE_EOF
+---
+request_type: missing_country
+country_code: ${COUNTRY_CODE}
+country_name: ${COUNTRY_NAME}
+passport_country: SG
+schema_version: 1
+---
+
+## Auto-escalated from missing-city issue #${N}
+
+Originally requested city data for **${CITY}**, but country data must be created first.
+ESCALATE_EOF
   fi
 fi
 
