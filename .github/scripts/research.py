@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Research a `missing-country` issue and produce rule/document JSON files.
+"""Research a `missing-country` or `missing-city` issue and produce policy JSON.
 
 Inputs (env vars):
   ANTHROPIC_API_KEY   — required, set via GitHub Actions secret.
@@ -8,9 +8,14 @@ Inputs (env vars):
   REPO_ROOT           — checkout root (defaults to cwd).
 
 Outputs:
-  Writes rules/<CC>_<PP>.json and documents/<CC>.json.
-  Updates manifest.json to include the new country.
-  Prints a Markdown "sources" block on stdout so the caller can include it in the PR body.
+  missing_country:
+    Creates rules/<CC>_<PP>.json and documents/<CC>.json.
+    Updates manifest.json to include the new country.
+  missing_city:
+    Merges city-specific action steps into existing rules/<CC>_<PP>.json.
+    Adds city to manifest.json countries[].cities[].
+
+  Both modes print a Markdown "sources" block on stdout for the PR body.
 
 Exit code:
   0 on success, 1 if the issue body is malformed / model output fails schema twice.
@@ -50,7 +55,10 @@ def parse_frontmatter(body: str) -> dict:
         die(f"Frontmatter is not valid YAML: {exc}")
     if not isinstance(data, dict):
         die("Frontmatter did not parse to a mapping.")
-    for key in ("request_type", "country_code", "country_name", "passport_country"):
+    required = ["request_type", "country_code", "country_name", "passport_country"]
+    if data.get("request_type") == "missing_city":
+        required.append("city")
+    for key in required:
         if key not in data:
             die(f"Frontmatter missing required field: {key}")
     return data
@@ -64,7 +72,11 @@ def load_schemas(root: Path) -> tuple[dict, dict, dict]:
     )
 
 
-def build_prompt(fm: dict, rule_schema: dict, doc_schema: dict) -> str:
+# ---------------------------------------------------------------------------
+# Country research (existing)
+# ---------------------------------------------------------------------------
+
+def build_country_prompt(fm: dict, rule_schema: dict, doc_schema: dict) -> str:
     country_code = fm["country_code"]
     country_name = fm["country_name"]
     passport = fm["passport_country"]
@@ -119,6 +131,178 @@ DOCUMENT SCHEMA:
 """
 
 
+def validate_country(payload: dict, rule_schema: dict, doc_schema: dict) -> list[str]:
+    errors = []
+    for err in Draft7Validator(rule_schema).iter_errors(payload.get("rules", [])):
+        errors.append(f"rules: {err.message} at {list(err.path)}")
+    for err in Draft7Validator(doc_schema).iter_errors(payload.get("documents", [])):
+        errors.append(f"documents: {err.message} at {list(err.path)}")
+    return errors
+
+
+def write_country_outputs(root: Path, fm: dict, payload: dict) -> None:
+    cc, pp = fm["country_code"], fm["passport_country"]
+    rules_path = root / "rules" / f"{cc}_{pp}.json"
+    docs_path = root / "documents" / f"{cc}.json"
+    rules_path.parent.mkdir(exist_ok=True)
+    docs_path.parent.mkdir(exist_ok=True)
+    rules_path.write_text(json.dumps(payload["rules"], indent=2, ensure_ascii=False) + "\n")
+    docs_path.write_text(json.dumps(payload["documents"], indent=2, ensure_ascii=False) + "\n")
+
+    # Upsert manifest
+    manifest_path = root / "manifest.json"
+    manifest = json.loads(manifest_path.read_text())
+    existing_codes = {c["countryCode"] for c in manifest["countries"]}
+    if cc not in existing_codes:
+        manifest["countries"].append({
+            "countryCode": cc,
+            "name": fm["country_name"],
+            "flagEmoji": "",
+            "cities": [],
+            "defaultCity": "",
+            "rulesFile": f"rules/{cc}_{pp}.json",
+            "documentsFile": f"documents/{cc}.json",
+        })
+        manifest_path.write_text(json.dumps(manifest, indent=2, ensure_ascii=False) + "\n")
+
+
+# ---------------------------------------------------------------------------
+# City research (new)
+# ---------------------------------------------------------------------------
+
+def build_city_prompt(fm: dict, action_step_schema: dict, existing_rules: list[dict]) -> str:
+    city = fm["city"]
+    country_name = fm["country_name"]
+    country_code = fm["country_code"]
+    passport = fm["passport_country"]
+
+    # Summarise existing rules so Claude knows which rules to attach steps to
+    rule_summary = []
+    for r in existing_rules:
+        rule_summary.append(
+            f"- \"{r['displayName']}\" (ruleType: {r['ruleType']}, "
+            f"thresholdDays: {r['thresholdDays']})"
+        )
+    rules_list = "\n".join(rule_summary) if rule_summary else "(no rules on file)"
+
+    return f"""You are researching city-specific information for a travel-logging app. A user is travelling to **{city}, {country_name} ({country_code})** on a {passport} passport. The app already has country-level rules but needs location-specific action steps for this city.
+
+EXISTING RULES for {country_name}:
+{rules_list}
+
+YOUR TASK: For each rule above where city-specific information is relevant, produce action steps for **{city}**. Focus on:
+
+1. **Exit-Entry Administration / PSB office** — the local Public Security Bureau office that handles visa extensions, registration, and immigration matters. Find the official address, website URL, and operating hours.
+2. **Tax bureau office** — if a CALENDAR_YEAR_THRESHOLD or CONSECUTIVE_YEAR_RULE exists, find the local tax authority office address and URL.
+3. **Visa extension procedures** — any city-specific processes or offices for extending visas or changing status.
+4. **Other relevant local offices** — e.g. foreign affairs office, notarial offices needed for document authentication.
+
+INSTRUCTIONS:
+- Use the web_search tool to find authoritative sources. Prefer .gov / government / official domains.
+- Every `url` must point to an official source. If you cannot find an official URL, omit the `url` field.
+- Set `location` to exactly "{city}" on every action step (case-sensitive match).
+- Set `isOnline` to false for physical offices, true for online services.
+- Include the full street address in the `address` field for physical offices.
+- Do NOT invent addresses or URLs — if you cannot verify, omit that step entirely.
+- Do NOT duplicate action steps that already exist. Only add NEW city-specific steps.
+
+OUTPUT: Return exactly ONE JSON object (no prose, no markdown fences) with two keys:
+
+  {{
+    "city_steps": {{
+      "<exact rule displayName>": [
+        {{
+          "title": "...",
+          "description": "...",
+          "url": "https://...",
+          "location": "{city}",
+          "address": "...",
+          "isOnline": false
+        }}
+      ]
+    }},
+    "sources": [ {{ "title": "...", "url": "https://..." }}, ... ]
+  }}
+
+The keys in `city_steps` MUST match the exact `displayName` strings from the existing rules listed above. Only include rules where you found city-specific information — omit rules with no relevant local data.
+
+ACTION STEP SCHEMA (each step must conform to this):
+```json
+{json.dumps(action_step_schema, indent=2)}
+```
+"""
+
+
+def validate_city(payload: dict, action_step_schema: dict) -> list[str]:
+    """Validate each action step in the city_steps payload."""
+    errors = []
+    city_steps = payload.get("city_steps", {})
+    if not isinstance(city_steps, dict):
+        return ["city_steps must be an object mapping rule displayName to arrays of action steps"]
+    for rule_name, steps in city_steps.items():
+        if not isinstance(steps, list):
+            errors.append(f"city_steps[\"{rule_name}\"] must be an array")
+            continue
+        for i, step in enumerate(steps):
+            for err in Draft7Validator(action_step_schema).iter_errors(step):
+                errors.append(f"city_steps[\"{rule_name}\"][{i}]: {err.message}")
+    return errors
+
+
+def write_city_outputs(root: Path, fm: dict, payload: dict) -> None:
+    cc, pp = fm["country_code"], fm["passport_country"]
+    city = fm["city"]
+
+    # Load existing rules
+    rules_path = root / "rules" / f"{cc}_{pp}.json"
+    if not rules_path.exists():
+        die(f"Rules file {rules_path} does not exist. Country data must be added before city data.")
+    existing_rules = json.loads(rules_path.read_text())
+
+    # Merge city-specific action steps into existing rules
+    city_steps = payload.get("city_steps", {})
+    steps_added = 0
+    for rule in existing_rules:
+        display_name = rule["displayName"]
+        if display_name in city_steps:
+            new_steps = city_steps[display_name]
+            existing_action_steps = rule.get("actionSteps", [])
+            # Deduplicate: skip steps whose title+location already exist
+            existing_keys = {
+                (s.get("title", ""), s.get("location", ""))
+                for s in existing_action_steps
+            }
+            for step in new_steps:
+                key = (step.get("title", ""), step.get("location", ""))
+                if key not in existing_keys:
+                    existing_action_steps.append(step)
+                    steps_added += 1
+            rule["actionSteps"] = existing_action_steps
+
+    if steps_added == 0:
+        die(f"No new action steps were added for {city}. Model may have returned empty or duplicate data.")
+
+    rules_path.write_text(json.dumps(existing_rules, indent=2, ensure_ascii=False) + "\n")
+
+    # Add city to manifest if not already present
+    manifest_path = root / "manifest.json"
+    manifest = json.loads(manifest_path.read_text())
+    for country in manifest["countries"]:
+        if country["countryCode"] == cc:
+            cities = country.get("cities", [])
+            if city not in cities:
+                cities.append(city)
+                country["cities"] = cities
+            break
+    manifest_path.write_text(json.dumps(manifest, indent=2, ensure_ascii=False) + "\n")
+
+    print(f"Added {steps_added} action step(s) for {city}.", file=sys.stderr)
+
+
+# ---------------------------------------------------------------------------
+# Common
+# ---------------------------------------------------------------------------
+
 def call_claude(client: Anthropic, prompt: str) -> str:
     """Call Claude with web-search enabled, return the text reply."""
     resp = client.messages.create(
@@ -147,41 +331,6 @@ def extract_json(text: str) -> dict:
         die(f"Model output is not valid JSON: {exc}\n\nFirst 500 chars:\n{text[:500]}")
 
 
-def validate(payload: dict, rule_schema: dict, doc_schema: dict) -> list[str]:
-    errors = []
-    for err in Draft7Validator(rule_schema).iter_errors(payload.get("rules", [])):
-        errors.append(f"rules: {err.message} at {list(err.path)}")
-    for err in Draft7Validator(doc_schema).iter_errors(payload.get("documents", [])):
-        errors.append(f"documents: {err.message} at {list(err.path)}")
-    return errors
-
-
-def write_outputs(root: Path, fm: dict, payload: dict) -> None:
-    cc, pp = fm["country_code"], fm["passport_country"]
-    rules_path = root / "rules" / f"{cc}_{pp}.json"
-    docs_path = root / "documents" / f"{cc}.json"
-    rules_path.parent.mkdir(exist_ok=True)
-    docs_path.parent.mkdir(exist_ok=True)
-    rules_path.write_text(json.dumps(payload["rules"], indent=2, ensure_ascii=False) + "\n")
-    docs_path.write_text(json.dumps(payload["documents"], indent=2, ensure_ascii=False) + "\n")
-
-    # Upsert manifest
-    manifest_path = root / "manifest.json"
-    manifest = json.loads(manifest_path.read_text())
-    existing_codes = {c["countryCode"] for c in manifest["countries"]}
-    if cc not in existing_codes:
-        manifest["countries"].append({
-            "countryCode": cc,
-            "name": fm["country_name"],
-            "flagEmoji": "",
-            "cities": [],
-            "defaultCity": "",
-            "rulesFile": f"rules/{cc}_{pp}.json",
-            "documentsFile": f"documents/{cc}.json",
-        })
-        manifest_path.write_text(json.dumps(manifest, indent=2, ensure_ascii=False) + "\n")
-
-
 def sources_markdown(payload: dict) -> str:
     sources = payload.get("sources", [])
     if not sources:
@@ -194,6 +343,71 @@ def sources_markdown(payload: dict) -> str:
     return "\n".join(lines)
 
 
+def run_country(fm: dict, root: Path, client: Anthropic) -> None:
+    """Full country research: rules + documents + manifest."""
+    rule_schema, doc_schema, _ = load_schemas(root)
+    prompt = build_country_prompt(fm, rule_schema, doc_schema)
+
+    payload: dict | None = None
+    errors: list[str] = []
+    for attempt in range(1, RETRY_ATTEMPTS + 1):
+        text = call_claude(client, prompt)
+        payload = extract_json(text)
+        errors = validate_country(payload, rule_schema, doc_schema)
+        if not errors:
+            break
+        if attempt < RETRY_ATTEMPTS:
+            prompt = (
+                build_country_prompt(fm, rule_schema, doc_schema)
+                + "\n\nYour previous response had schema violations:\n"
+                + "\n".join(f"- {e}" for e in errors)
+                + "\n\nFix them and return valid JSON."
+            )
+    if errors:
+        die("Schema validation failed after retries:\n" + "\n".join(errors))
+    assert payload is not None
+
+    write_country_outputs(root, fm, payload)
+    print(sources_markdown(payload))
+
+
+def run_city(fm: dict, root: Path, client: Anthropic) -> None:
+    """City research: add action steps to existing country rules."""
+    cc, pp = fm["country_code"], fm["passport_country"]
+    rules_path = root / "rules" / f"{cc}_{pp}.json"
+    if not rules_path.exists():
+        die(f"Cannot add city data: {rules_path} does not exist. Add the country first.")
+
+    existing_rules = json.loads(rules_path.read_text())
+    rule_schema, _, _ = load_schemas(root)
+    # Extract the ActionStep schema from the rule schema definitions
+    action_step_schema = rule_schema.get("definitions", {}).get("ActionStep", {})
+
+    prompt = build_city_prompt(fm, action_step_schema, existing_rules)
+
+    payload: dict | None = None
+    errors: list[str] = []
+    for attempt in range(1, RETRY_ATTEMPTS + 1):
+        text = call_claude(client, prompt)
+        payload = extract_json(text)
+        errors = validate_city(payload, action_step_schema)
+        if not errors:
+            break
+        if attempt < RETRY_ATTEMPTS:
+            prompt = (
+                build_city_prompt(fm, action_step_schema, existing_rules)
+                + "\n\nYour previous response had schema violations:\n"
+                + "\n".join(f"- {e}" for e in errors)
+                + "\n\nFix them and return valid JSON."
+            )
+    if errors:
+        die("Schema validation failed after retries:\n" + "\n".join(errors))
+    assert payload is not None
+
+    write_city_outputs(root, fm, payload)
+    print(sources_markdown(payload))
+
+
 def main() -> None:
     api_key = os.environ.get("ANTHROPIC_API_KEY")
     if not api_key:
@@ -204,37 +418,16 @@ def main() -> None:
     body = Path(body_path).read_text()
     fm = parse_frontmatter(body)
 
-    if fm["request_type"] != "missing_country":
-        print(f"Skipping: request_type={fm['request_type']} not yet supported.")
-        sys.exit(0)
-
     root = Path(os.environ.get("REPO_ROOT", "."))
-    rule_schema, doc_schema, _manifest_schema = load_schemas(root)
-
     client = Anthropic(api_key=api_key)
-    prompt = build_prompt(fm, rule_schema, doc_schema)
 
-    payload: dict | None = None
-    errors: list[str] = []
-    for attempt in range(1, RETRY_ATTEMPTS + 1):
-        text = call_claude(client, prompt)
-        payload = extract_json(text)
-        errors = validate(payload, rule_schema, doc_schema)
-        if not errors:
-            break
-        if attempt < RETRY_ATTEMPTS:
-            prompt = (
-                build_prompt(fm, rule_schema, doc_schema)
-                + "\n\nYour previous response had schema violations:\n"
-                + "\n".join(f"- {e}" for e in errors)
-                + "\n\nFix them and return valid JSON."
-            )
-    if errors:
-        die("Schema validation failed after retries:\n" + "\n".join(errors))
-    assert payload is not None
-
-    write_outputs(root, fm, payload)
-    print(sources_markdown(payload))
+    if fm["request_type"] == "missing_country":
+        run_country(fm, root, client)
+    elif fm["request_type"] == "missing_city":
+        run_city(fm, root, client)
+    else:
+        print(f"Skipping: request_type={fm['request_type']} not supported.")
+        sys.exit(0)
 
 
 if __name__ == "__main__":
