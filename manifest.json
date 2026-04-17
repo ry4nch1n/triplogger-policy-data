@@ -24,6 +24,19 @@
         "TOURIST_VISA",
         "WORK_PERMIT"
       ]
+    },
+    {
+      "countryCode": "JP",
+      "name": "Japan",
+      "flagEmoji": "",
+      "cities": [],
+      "defaultCity": "",
+      "rulesFile": "rules/JP_SG.json",
+      "documentsFile": "documents/JP.json",
+      "visaTypes": [
+        "VISA_FREE",
+        "OTHER"
+      ]
     }
   ]
 }

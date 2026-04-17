@@ -1,0 +1,35 @@
+[
+  {
+    "countryCode": "JP",
+    "name": "Visit Japan Web – Immigration & Customs Pre-Registration",
+    "description": "Japan's official Digital Agency web service for pre-registering immigration (disembarkation card) and customs declaration information before arrival. Generates a QR code for use at airport e-gates and electronic customs declaration terminals. Paper forms remain an alternative for those who do not pre-register online.",
+    "url": "https://vjw.digital.go.jp/",
+    "urlMobile": "https://vjw.digital.go.jp/",
+    "reminderDaysBefore": 3,
+    "isRequired": false,
+    "applicableVisaTypes": [
+      "VISA_FREE",
+      "TOURIST_VISA",
+      "BUSINESS_VISA",
+      "WORK_PERMIT",
+      "OTHER"
+    ],
+    "category": "arrival"
+  },
+  {
+    "countryCode": "JP",
+    "name": "Customs Declaration (Accompanied Articles)",
+    "description": "All passengers entering Japan must submit a Customs Declaration for accompanied and unaccompanied articles. This can be completed digitally via Visit Japan Web (generating a QR code) or on a paper form available on the aircraft or at the airport Customs Inspection Area. Items to declare include cash or monetary instruments over ¥1 million, gold bullion of 1 kg or more, and goods exceeding duty-free allowances.",
+    "url": "https://www.customs.go.jp/english/passenger/declaration/declaration_app.html",
+    "reminderDaysBefore": 1,
+    "isRequired": true,
+    "applicableVisaTypes": [
+      "VISA_FREE",
+      "TOURIST_VISA",
+      "BUSINESS_VISA",
+      "WORK_PERMIT",
+      "OTHER"
+    ],
+    "category": "customs"
+  }
+]

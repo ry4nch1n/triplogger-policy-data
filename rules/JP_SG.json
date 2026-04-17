@@ -1,0 +1,135 @@
+[
+  {
+    "countryCode": "JP",
+    "passportCountry": "SG",
+    "ruleType": "SINGLE_ENTRY_LIMIT",
+    "displayName": "Japan 90-Day Visa-Free Stay (SG Passport)",
+    "description": "Singapore citizens may enter Japan as Temporary Visitors without a visa for stays of up to 90 days per entry, for purposes including tourism, visiting friends/relatives, business meetings, attending conferences, and other unpaid activities.",
+    "thresholdDays": 90,
+    "applicableVisaTypes": [
+      "VISA_FREE"
+    ],
+    "cautionThresholdPercent": 67,
+    "warningThresholdPercent": 83,
+    "criticalThresholdPercent": 95,
+    "isActive": true,
+    "priority": 1,
+    "suggestion": "Keep each stay under 90 days. Plan your departure date before arrival and track days from the immigration stamp in your passport.",
+    "detailedExplanation": "Under the Japan–Singapore visa exemption arrangement, Singapore passport holders are admitted as 'Temporary Visitors' for up to 90 days per entry. The 90-day clock starts on the day of arrival and the permitted period of stay is stamped in the passport at the port of entry. Paid activities (i.e. any work generating remuneration) are not permitted under this status regardless of how many days remain.",
+    "actionSteps": [
+      {
+        "title": "Apply for a Long-Stay or Work Visa (if needed)",
+        "description": "If you intend to stay beyond 90 days or engage in paid activities, apply for the appropriate visa category at the Japan Visa Application Centre (JVAC) in Singapore. Applications must be submitted within 3 months of your intended travel date and take at least 10 working days to process.",
+        "url": "https://www.sg.emb-japan.go.jp/itpr_en/visit.html",
+        "location": "Japan Visa Application Centre (JVAC), Singapore",
+        "address": "See Embassy of Japan in Singapore website for current JVAC address",
+        "isOnline": false
+      },
+      {
+        "title": "Check Visa Requirement Status",
+        "description": "Verify current visa requirements and permitted activities for Singapore passport holders on the official Embassy of Japan in Singapore website before each trip.",
+        "url": "https://www.sg.emb-japan.go.jp/itpr_en/visa_requirement.html",
+        "isOnline": true
+      }
+    ]
+  },
+  {
+    "countryCode": "JP",
+    "passportCountry": "SG",
+    "ruleType": "VISA_REQUIREMENT",
+    "displayName": "Japan Visa Required Beyond 90-Day Limit",
+    "description": "A visa is required for any stay exceeding 90 days per entry, or for any activities involving remuneration or paid work, regardless of length of stay. Japan visas cannot be obtained on arrival; they must be obtained from a Japanese Embassy or Consulate before departure.",
+    "thresholdDays": 90,
+    "applicableVisaTypes": [
+      "VISA_FREE"
+    ],
+    "isActive": true,
+    "priority": 2,
+    "suggestion": "If your purpose involves paid work or your stay exceeds 90 days, apply for the correct visa category at the JVAC in Singapore before you travel. Allow at least 10 working days for processing.",
+    "detailedExplanation": "Per the Embassy of Japan in Singapore, paid activities or stays beyond the visa-free 90-day period require a visa obtained prior to departure. Japan visas are not issued on arrival at airports. Singapore citizens applying from Singapore must use the Japan Visa Application Centre (JVAC). The appropriate visa category depends on the purpose and length of intended stay (e.g. Temporary Visitor with extension, Working Holiday, or long-term work visa).",
+    "actionSteps": [
+      {
+        "title": "Japan Visa Application via JVAC Singapore",
+        "description": "Submit your visa application through the authorised Japan Visa Application Centre (JVAC) in Singapore. Only apply within 3 months of your travel date. Processing takes at least 10 working days if documents are in order. The Japan Visa Information Hotline is available 24/7 at +65 3125 1895 (English only).",
+        "url": "https://www.sg.emb-japan.go.jp/itpr_en/visit.html",
+        "location": "Japan Visa Application Centre (JVAC), Singapore",
+        "isOnline": false
+      },
+      {
+        "title": "MOFA Japan Visa Exemption List",
+        "description": "Consult the Ministry of Foreign Affairs of Japan's official visa exemption list to confirm the current terms of the Singapore–Japan exemption arrangement.",
+        "url": "https://www.mofa.go.jp/j_info/visit/visa/short/novisa.html",
+        "isOnline": true
+      }
+    ]
+  },
+  {
+    "countryCode": "JP",
+    "passportCountry": "SG",
+    "ruleType": "CALENDAR_YEAR_THRESHOLD",
+    "displayName": "Japan Tax Residency: 1-Year Continuous Residence",
+    "description": "Under Japan's Income Tax Act, any individual who has continuously maintained a residence (kyosho) in Japan for one year or more becomes a tax resident, regardless of nationality. Tax residents are liable for Japanese income tax. Japan does not use a simple 183-day bright-line rule; residency is determined by domicile (jusho) or continuous physical residence of 1+ year.",
+    "thresholdDays": 365,
+    "cautionThresholdPercent": 70,
+    "warningThresholdPercent": 85,
+    "criticalThresholdPercent": 95,
+    "isActive": true,
+    "priority": 3,
+    "suggestion": "Japan's tax residency is not triggered by a day count alone — it depends on whether you have established a domicile (jusho) or maintained a continuous residence (kyosho) for one year or more. Avoid establishing a fixed home base, long-term lease, or moving family to Japan if you wish to remain a non-resident for tax purposes. Consult a Japanese tax professional (zeirishi) for your specific situation.",
+    "detailedExplanation": "Article 2 of Japan's Income Tax Act defines a 'Resident' as an individual who (i) has a domicile (jusho) in Japan, or (ii) has maintained a temporary place of abode (kyosho) in Japan continuously for one year or more. There is no simple 183-day safe harbour under domestic law. Tax authorities assess residency based on substance: occupation, family location, housing, and centre of life. A Singapore tax resident who also triggers Japanese tax residency may be able to claim relief under the Japan–Singapore Double Tax Agreement. IRAS guidance on foreign tax credits is relevant for Singapore-side tax filing.",
+    "actionSteps": [
+      {
+        "title": "Japan NTA: Non-Resident Tax Guide (English)",
+        "description": "Review the National Tax Agency's official English-language guidance on who qualifies as a non-resident versus resident for Japanese tax purposes, and the scope of taxable income for non-residents.",
+        "url": "https://www.nta.go.jp/english/taxes/individual/12006.htm",
+        "isOnline": true
+      },
+      {
+        "title": "Japan Income Tax Act (English Translation)",
+        "description": "Article 2 of Japan's Income Tax Act (as translated by the Ministry of Justice) defines Resident, Non-Permanent Resident, and Nonresident for tax purposes.",
+        "url": "https://www.japaneselawtranslation.go.jp/en/laws/view/3120/en",
+        "isOnline": true
+      },
+      {
+        "title": "IRAS: Foreign Tax Credit (Singapore Side)",
+        "description": "If you pay income tax in Japan on income also taxable in Singapore, you may be eligible for a Foreign Tax Credit on your Singapore tax return. Review IRAS guidance on claiming credits for taxes paid abroad.",
+        "url": "https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/tax-reliefs-rebates-and-deductions/deductions-on-actual-amount-incurred/foreign-tax-credit",
+        "isOnline": true
+      },
+      {
+        "title": "Japan–Singapore Double Tax Agreement",
+        "description": "The Japan–Singapore DTA may provide relief from double taxation on employment income. Under the treaty's 183-day employment income provision (rolling 12-month basis for SG), income may be exempt from Japanese tax if the conditions are met. Consult the NTA or a qualified zeirishi for treaty application.",
+        "url": "https://www.mof.go.jp/tax_policy/summary/international/tax_convention/st_2009_062.htm",
+        "isOnline": true
+      }
+    ]
+  },
+  {
+    "countryCode": "JP",
+    "passportCountry": "SG",
+    "ruleType": "CONSECUTIVE_YEAR_RULE",
+    "displayName": "Japan Permanent Tax Resident: 5 Years in 10",
+    "description": "A foreign national who has been resident in Japan for more than 5 years (in aggregate) within the preceding 10 years is reclassified from Non-Permanent Resident to Permanent Resident for tax purposes, and becomes liable for Japanese income tax on worldwide income.",
+    "thresholdDays": 1826,
+    "consecutiveYears": 5,
+    "resetConditionDays": 365,
+    "isActive": true,
+    "priority": 4,
+    "suggestion": "Track your cumulative months of Japanese tax residency carefully. Once you exceed 5 years in any rolling 10-year period, you will be taxed on worldwide income. If you leave Japan for a sufficient period to reset the 10-year rolling window, you may return to Non-Permanent Resident status on re-entry.",
+    "detailedExplanation": "Under Article 2(iv) of Japan's Income Tax Act, a Non-Permanent Resident is a Resident who is not a Japanese national and who has been domiciled or resident in Japan for a total of no more than 5 of the past 10 years. Once this 5-year cumulative threshold is exceeded within the rolling 10-year look-back window, the individual is reclassified as a Permanent Resident taxpayer and is subject to Japanese income tax on worldwide income from all sources. During the Non-Permanent Resident period, foreign-source income paid abroad and not remitted to Japan is generally not subject to Japanese income tax. Singapore citizens with worldwide investment income should plan their Japan residency duration carefully in light of this rule. The 'resetConditionDays' of 365 reflects the approximate minimum absence from Japanese residency needed to begin resetting the 10-year rolling window, but the exact period required depends on individual circumstances — professional tax advice is strongly recommended.",
+    "actionSteps": [
+      {
+        "title": "NTA Income Tax Guide: Resident Classification",
+        "description": "The NTA's official Income Tax and Special Income Tax for Reconstruction Guide explains the three residency categories — Resident, Non-Permanent Resident, and Non-Resident — and their tax implications, including the 5-year/10-year window for permanent resident classification.",
+        "url": "https://www.nta.go.jp/english/taxes/individual/pdf/incometax_2023/01.pdf",
+        "isOnline": true
+      },
+      {
+        "title": "IRAS: Tax Obligations When Working Overseas",
+        "description": "Review IRAS guidance on your continuing Singapore tax obligations and potential foreign tax credit claims if you become a Japanese Permanent Resident taxpayer subject to worldwide income tax in Japan.",
+        "url": "https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/tax-residency-and-tax-rates/working-out-my-tax-residency",
+        "isOnline": true
+      }
+    ]
+  }
+]
